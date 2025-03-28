@@ -38,3 +38,17 @@ def merge_pdf(input_file, output_file, columns=2, rows=4):
     doc_out.save(output_file)
     doc_out.close()
     doc_in.close()
+
+
+if __name__ == "__main__":
+    import sys
+
+    if len(sys.argv) < 3:
+        print("用法: python merge_pdf_8up.py <输入PDF> <输出PDF>")
+        sys.exit(1)
+
+    input_pdf = sys.argv[1]
+    output_pdf = sys.argv[2]
+
+    merge_pdf_8perpage(input_pdf, output_pdf)
+    print(f"合并完成，输出文件: {output_pdf}")
