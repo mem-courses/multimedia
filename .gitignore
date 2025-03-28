@@ -1,3 +1,7 @@
 /public
 /assets/merged
+
+/template.pdf
+/src/**/*.pdf
+
 *.pyc
