@@ -29,7 +29,10 @@
 - *1 位图像(1-bit image)*，也称为 *二值图像(binary image)* 或 *单色图像(monochrome image)*。
 - 每个像素存储为单个位，通常 0 代表黑色，1 代表白色。
 
-#slide2x([5], image("../public/merged-02/0005.jpg"), image("../public/translated-02/0005.jpg"), crop: 0.9)
+#no-par-margin
+#align(center, image("images/2025-03-28-15-04-22.png", width: 30%))
+
+#slide2x([5], image("../public/merged-02/0005.jpg"), image("../public/translated-02/0005.jpg"), crop: 0.56)
 
 #slide2x([6], image("../public/merged-02/0006.jpg"), image("../public/translated-02/0006.jpg"), crop: 0.92)
 
@@ -54,11 +57,14 @@
 #topic("抖动", blue)[
   #slide2x([12], image("../public/merged-02/0012.jpg"), image("../public/translated-02/0012.jpg"), crop: 0.9)
 
-  #slide2x([13], image("../public/merged-02/0013.jpg"), image("../public/translated-02/0013.jpg"))
+  #slide2x([13], image("../public/merged-02/0013.jpg"), image("../public/translated-02/0013.jpg"), crop: 0.7)
 
   - 为了在 1-bit 打印机上打印灰度图像，通常可以使用 #strong[抖动(dithering)] 技术。
     - 抖动技术的核心思想是将 #strong[强度分辨率(intensity resolution)] 转换为 #strong[空间分辨率(spatial resolution)]——即用更大的图案（$N times N$ 的矩阵）替换像素值，使得打印点的数量近似于模拟 #strong[半色调打印(halftone printing)] 中使用的不同大小的墨水圆盘。
-    - 一个 $N times N$ 矩阵可以表示 $N^2 + 1$ 级强度级别，正如上页所示：$2 times 2$ 图案可以表示五个强度级别：。
+    - 一个 $N times N$ 矩阵可以表示 $N^2 + 1$ 级强度级别，正如图所示：$2 times 2$ 图案可以表示五个强度级别。
+
+  #no-par-margin
+  #align(center, image("images/2025-03-28-15-05-17.png", width: 32%))
 
   #slide2x([14], image("../public/merged-02/0014.jpg"), image("../public/translated-02/0014.jpg"))
 
@@ -98,12 +104,12 @@
 
 #slide2x([22], image("../public/merged-02/0022.jpg"), image("../public/translated-02/0022.jpg"))
 
-- #strong[半透明(Semi-transparency)] 图像颜色计算方法：\
-  $upright("半透明图像颜色") = upright("源图像颜色") times \( 100 % - upright("透明度") \) + upright("背景图像颜色") times upright("透明度")$
+- #strong[半透明(Semi-transparency)] 图像颜色计算方法：
 
-#slide2x([23], image("../public/merged-02/0023.jpg"), image("../public/translated-02/0023.jpg"), crop: 1.02)
-
-#slide2x([24], image("../public/merged-02/0024.jpg"), image("../public/translated-02/0024.jpg"), crop: 0.92)
+#no-par-margin
+$
+upright("半透明图像颜色") = upright("源图像颜色") times \( 100 % - upright("透明度") \) + upright("背景图像颜色") times upright("透明度")
+$
 
 #slide2x([26], image("../public/merged-02/0026.jpg"), image("../public/translated-02/0026.jpg"), crop: 0.85)
 
@@ -111,7 +117,7 @@
 
 - #strong[8 位彩色图像(8-bit color image)] 也称为 #strong[256 色图像(256-colors image)];。
 
-#topic("颜色查找表LUT", green)[
+#topic("颜色查找表(LUT)", green)[
   #slide2x([28], image("../public/merged-02/0028.jpg"), image("../public/translated-02/0028.jpg"), crop: 0.94)
 
   <bit-color-image-1>
@@ -175,11 +181,16 @@
 
 - #strong[联合图像专家组(Joint Photographic Experts Group, JPEG)] 图片允许用户设置所需的 #strong[质量级别(quality level)] 或 #strong[压缩比(compression ratio)];（输入大小除以输出大小）。
 
-#slide2x([49], image("../public/merged-02/0049.jpg"), image("../public/translated-02/0049.jpg"))
-
-#slide2x([50], image("../public/merged-02/0050.jpg"), image("../public/translated-02/0050.jpg"))
-
-#slide2x([51], image("../public/merged-02/0051.jpg"), image("../public/translated-02/0051.jpg"))
+#no-par-margin
+#callout(
+  width: 80%,
+  grid(
+    columns: (1fr, 1fr, 1fr),
+    align(center, image("images/2025-03-28-15-08-14.png", width: 100%)),
+    align(center, image("images/2025-03-28-15-08-24.png", width: 100%)),
+    align(center, image("images/2025-03-28-15-08-31.png", width: 100%)),
+  ),
+)
 
 #slide2x([52], image("../public/merged-02/0052.jpg"), image("../public/translated-02/0052.jpg"), crop: 0.88)
 

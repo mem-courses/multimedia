@@ -314,7 +314,11 @@
 #let current-topic = state("current-topic", none)
 #let current-color = state("current-color", black)
 
+#let no-par-margin = v(-0.6em)
+
 #let slide2x(page, img1, img2, crop: none) = {
+  let note-width = 1.2em
+
   let slide1x(
     img,
     border-color: black,
@@ -328,7 +332,7 @@
         img
       } else {
         let page-width = 595.28pt // a4
-        let w = (page-width - 32mm - 2em - 1.5pt) / 2
+        let w = (page-width - 32mm - note-width * 2 - 1.5pt) / 2
         let h = w / 983 * 677
         let new_h = h * crop
         box(
@@ -343,30 +347,43 @@
   }
 
   set align(center)
-  v(-0.6em)
+  no-par-margin
   h(-1em)
   context {
     set text(fill: current-color.get())
     box(
       width: 100%,
       grid(
-        columns: (1em, 1fr, 1fr, 1em),
-        page,
+        columns: (note-width, 1fr, 1fr, note-width),
+        {
+          set align(left)
+          v(0.25em)
+          page
+        },
         slide1x(img1), // left
         slide1x(img2), // right
-        context current-topic.get()
+        {
+          set align(right)
+          context current-topic.get()
+        }
       ),
     )
     set text(fill: black)
   }
   h(-1em)
-  v(-0.6em)
+  no-par-margin
 }
 
 #let topic(name, color, content) = {
   current-topic.update(x => {
     for ch in name {
-      par(ch)
+      par(if ch == "(" {
+        "﹁"
+      } else if ch == ")" {
+        "﹂"
+      } else {
+        ch
+      })
       v(-0.9em)
     }
   })
@@ -374,4 +391,22 @@
   content
   current-topic.update(x => none)
   current-color.update(x => black)
+}
+
+#let boxed(it) = {
+  set text(top-edge: "ascender", bottom-edge: "descender")
+  box(
+    stroke: black + 0.5pt,
+    inset: 1pt,
+    it,
+  )
+}
+
+#let important(it) = {
+  set text(fill: red)
+  it
+}
+
+#let callout(it, width: 100%) = {
+  align(center, box(width: width, it))
 }
