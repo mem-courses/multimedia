@@ -41,7 +41,7 @@
 #slide2x([8], image("../public/merged-04/0008.jpg"), image("../public/translated-04/0008.jpg"), crop: 0.9)
 
 - *S 视频(super video, S-video)* 是一种折衷的方案，将灰度信号和色度信号通过两条线缆传输。
-	- 这利用了人眼区分灰度的能力远高于色度的性质，致力于避免灰度信号和色度信号之间的串扰。
+  - 这利用了人眼区分灰度的能力远高于色度的性质，致力于避免灰度信号和色度信号之间的串扰。
 
 #slide2x([9], image("../public/merged-04/0009.jpg"), image("../public/translated-04/0009.jpg"), crop: 0.67)
 
@@ -70,7 +70,7 @@
 #slide2x([15], image("../public/merged-04/0015.jpg"), image("../public/translated-04/0015.jpg"))
 
 - NTSC 的扫描信号实例。
-   - 对于水平回扫阶段，可以给一个“比黑更黑”的电压，并用于表示一行的开始。
+  - 对于水平回扫阶段，可以给一个“比黑更黑”的电压，并用于表示一行的开始。
 
 #slide2x([16], image("../public/merged-04/0016.jpg"), image("../public/translated-04/0016.jpg"))
 
@@ -88,14 +88,17 @@
 #slide2x([20], image("../public/merged-04/0020.jpg"), image("../public/translated-04/0020.jpg"))
 
 - *水平分辨率(horizontal resolution)*：每行采样的像素数。
+- NTSC 标准没有固定的水平分辨率，而是通过 *samples per line* 来决定。
 
-#slide2x([21], image("../public/merged-04/0021.jpg"), image("../public/translated-04/0021.jpg"))
+#topic("调制解调", blue)[
+  #slide2x([21], image("../public/merged-04/0021.jpg"), image("../public/translated-04/0021.jpg"))
 
-#slide2x([22], image("../public/merged-04/0022.jpg"), image("../public/translated-04/0022.jpg"))
+  #slide2x([22], image("../public/merged-04/0022.jpg"), image("../public/translated-04/0022.jpg"))
 
-#slide2x([23], image("../public/merged-04/0023.jpg"), image("../public/translated-04/0023.jpg"))
+  #slide2x([23], image("../public/merged-04/0023.jpg"), image("../public/translated-04/0023.jpg"))
 
-#slide2x([24], image("../public/merged-04/0024.jpg"), image("../public/translated-04/0024.jpg"))
+  #slide2x([24], image("../public/merged-04/0024.jpg"), image("../public/translated-04/0024.jpg"))
+]
 
 #slide2x([25], image("../public/merged-04/0025.jpg"), image("../public/translated-04/0025.jpg"))
 
