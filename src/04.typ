@@ -47,15 +47,30 @@
 
 #slide2x([10], image("../public/merged-04/0010.jpg"), image("../public/translated-04/0010.jpg"))
 
-#slide2x([11], image("../public/merged-04/0011.jpg"), image("../public/translated-04/0011.jpg"))
+- *逐行扫描(progressive scanning)*：在每个时间间隔内按行扫描完整图像，如 CRT显示器就采用这种方式。
 
-#slide2x([12], image("../public/merged-04/0012.jpg"), image("../public/translated-04/0012.jpg"))
+#slide2x([11], image("../public/merged-04/0011.jpg"), image("../public/translated-04/0011.jpg"), crop: 0.83)
 
-#slide2x([13], image("../public/merged-04/0013.jpg"), image("../public/translated-04/0013.jpg"))
+- *隔行扫描(interlaced scanning)*：逐行扫描的一个改进版本，先扫描奇数行再扫描偶数行。
+  - 值得一提的是，这仍是通过沿着同一方向向量扫描进行实现的，参见下图：
+  - 注意到，先从 $P$ 扫描到 $Q$，再从 $R$ 扫描到 $S$ 依次类推直到扫描完所有奇数行并恰好在 $T$ 点接触。接下来自动跳转到 $U$ 并继续偶数行的扫描。直到扫描完所有偶数行在从 $V$ 回到 $P$，开始新的一个扫描周期。
+  - 可以发现如果使用隔行扫描的方法的话，每一帧的行数应该是奇数，每一场的行数需刚好多出半行。
 
-#slide2x([14], image("../public/merged-04/0014.jpg"), image("../public/translated-04/0014.jpg"))
+#no-par-margin
+#align(center, image("images/2025-03-28-17-14-48.png", width: 50%))
+#no-par-margin
+
+- *水平回扫(horizontal retrace)*：从 $Q$ 到 $R$ 的跳转称为水平回扫，再次期间，CRT 的电子束被消隐（参见P15）。
+- *垂直回扫(vertical retrace)*：从 $Y$ 到 $U$ 的跳转和从 $V$ 到 $P$ 的跳转被称为垂直回扫。
+
+#slide2x([13], image("../public/merged-04/0013.jpg"), image("../public/translated-04/0013.jpg"), crop: 0.94)
+
+#slide2x([14], image("../public/merged-04/0014.jpg"), image("../public/translated-04/0014.jpg"), crop: 0.96)
 
 #slide2x([15], image("../public/merged-04/0015.jpg"), image("../public/translated-04/0015.jpg"))
+
+- NTSC 的扫描信号实例。
+   - 对于水平回扫阶段，可以给一个“比黑更黑”的电压，并用于表示一行的开始。
 
 #slide2x([16], image("../public/merged-04/0016.jpg"), image("../public/translated-04/0016.jpg"))
 
@@ -63,9 +78,16 @@
 
 #slide2x([18], image("../public/merged-04/0018.jpg"), image("../public/translated-04/0018.jpg"))
 
-#slide2x([19], image("../public/merged-04/0019.jpg"), image("../public/translated-04/0019.jpg"))
+- 一些关于 NTSC 的参数
+  - 525 行每帧，262.5 行每场（采用隔行扫描的方式），其中每场预留了 20 行用于垂直回扫。
+  - $1"/"15734 mu s = 63.6 mu s$ 每行，其中 $10.9 mu s$ 用于水平回扫，$52.7 mu s$ 用于显示（可参考 P15）。
+
+#no-par-margin
+#align(center, image("images/2025-03-28-17-25-55.png", width: 36%))
 
 #slide2x([20], image("../public/merged-04/0020.jpg"), image("../public/translated-04/0020.jpg"))
+
+- *水平分辨率(horizontal resolution)*：每行采样的像素数。
 
 #slide2x([21], image("../public/merged-04/0021.jpg"), image("../public/translated-04/0021.jpg"))
 
