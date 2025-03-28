@@ -1,7 +1,10 @@
+import os
 import fitz  # PyMuPDF
 
 
 def merge_pdf(input_file, output_file, columns=2, rows=4):
+    os.makedirs(os.path.dirname(output_file), exist_ok=True)
+    
     doc_in = fitz.open(input_file)
     doc_out = fitz.open()
     page_count = doc_in.page_count
@@ -50,5 +53,5 @@ if __name__ == "__main__":
     input_pdf = sys.argv[1]
     output_pdf = sys.argv[2]
 
-    merge_pdf_8perpage(input_pdf, output_pdf)
+    merge_pdf(input_pdf, output_pdf)
     print(f"合并完成，输出文件: {output_pdf}")
