@@ -32,13 +32,13 @@
 
 #slide2x([5], image("../public/merged-04/0005.jpg"), image("../public/translated-04/0005.jpg"), crop: 0.75)
 
-#slide2x([6], image("../public/merged-04/0006.jpg"), image("../public/translated-04/0006.jpg"))
+#slide2x([6], image("../public/merged-04/0006.jpg"), image("../public/translated-04/0006.jpg"), header: false)
 
 - *复合视频(composite video)*：将 *色度(chrominance)* 和 *亮度(luminance)* 信号混合到单个载波形中，从而通过一条线缆传输。（分离的方法后面会提到）
 
 #slide2x([7], image("../public/merged-04/0007.jpg"), image("../public/translated-04/0007.jpg"))
 
-#slide2x([8], image("../public/merged-04/0008.jpg"), image("../public/translated-04/0008.jpg"), crop: 0.9)
+#slide2x([8], image("../public/merged-04/0008.jpg"), image("../public/translated-04/0008.jpg"), crop: 0.9, header: false)
 
 - *S 视频(super video, S-video)* 是一种折衷的方案，将灰度信号和色度信号通过两条线缆传输。
   - 这利用了人眼区分灰度的能力远高于色度的性质，致力于避免灰度信号和色度信号之间的串扰。
@@ -49,7 +49,7 @@
 
 - *逐行扫描(progressive scanning)*：在每个时间间隔内按行扫描完整图像，如 CRT显示器就采用这种方式。
 
-#slide2x([11], image("../public/merged-04/0011.jpg"), image("../public/translated-04/0011.jpg"), crop: 0.83)
+#slide2x([11], image("../public/merged-04/0011.jpg"), image("../public/translated-04/0011.jpg"), crop: 0.83, header: false)
 
 - *隔行扫描(interlaced scanning)*：逐行扫描的一个改进版本，先扫描奇数行再扫描偶数行。
   - 值得一提的是，这仍是通过沿着同一方向向量扫描进行实现的，参见下图：
@@ -63,18 +63,18 @@
 - *水平回扫(horizontal retrace)*：从 $Q$ 到 $R$ 的跳转称为水平回扫，再次期间，CRT 的电子束被消隐（参见P15）。
 - *垂直回扫(vertical retrace)*：从 $Y$ 到 $U$ 的跳转和从 $V$ 到 $P$ 的跳转被称为垂直回扫。
 
-#slide2x([13], image("../public/merged-04/0013.jpg"), image("../public/translated-04/0013.jpg"), crop: 0.94)
+#slide2x([13], image("../public/merged-04/0013.jpg"), image("../public/translated-04/0013.jpg"), crop: 0.94, header: false)
 
-#slide2x([14], image("../public/merged-04/0014.jpg"), image("../public/translated-04/0014.jpg"), crop: 0.96)
+#slide2x([14], image("../public/merged-04/0014.jpg"), image("../public/translated-04/0014.jpg"), crop: 0.96, header: false)
 
-#slide2x([15], image("../public/merged-04/0015.jpg"), image("../public/translated-04/0015.jpg"))
+#slide2x([15], image("../public/merged-04/0015.jpg"), image("../public/translated-04/0015.jpg"), header: false)
 
 - NTSC 的扫描信号实例。
   - 对于水平回扫阶段，可以给一个“比黑更黑”的电压，并用于表示一行的开始。
 
-#slide2x([16], image("../public/merged-04/0016.jpg"), image("../public/translated-04/0016.jpg"))
+#slide2x([16], image("../public/merged-04/0016.jpg"), image("../public/translated-04/0016.jpg"), header: false)
 
-#slide2x([17], image("../public/merged-04/0017.jpg"), image("../public/translated-04/0017.jpg"))
+#slide2x([17], image("../public/merged-04/0017.jpg"), image("../public/translated-04/0017.jpg"), header: false)
 
 #slide2x([18], image("../public/merged-04/0018.jpg"), image("../public/translated-04/0018.jpg"))
 
@@ -85,13 +85,13 @@
 #no-par-margin
 #align(center, image("images/2025-03-28-17-25-55.png", width: 30%))
 
-#slide2x([20], image("../public/merged-04/0020.jpg"), image("../public/translated-04/0020.jpg"))
+#slide2x([20], image("../public/merged-04/0020.jpg"), image("../public/translated-04/0020.jpg"), header: false)
 
 - *水平分辨率(horizontal resolution)*：每行采样的像素数。
 - NTSC 标准没有固定的水平分辨率，而是通过 *samples per line* 来决定。
 
 #topic("调制解调", blue)[
-  #slide2x([21], image("../public/merged-04/0021.jpg"), image("../public/translated-04/0021.jpg"), crop: 0.91)
+  #slide2x([21], image("../public/merged-04/0021.jpg"), image("../public/translated-04/0021.jpg"), crop: 0.91, header: false)
 
   - *正交调制技术(quadrature modulation)*：将 *同相(in-phase)* 信号 $I(t)$ 和 *正交(quadrature)* 信号 $Q(t)$ 分别调制到两个正交的载波上，组合乘一个 *色度信号(chroma signal)* $C$:
 
@@ -109,11 +109,11 @@
     important(V_"composite" = Y + C = Y + I cos (F_"sc" t) +Q sin (F_"sc" t))
   $
 
-  #slide2x([22], image("../public/merged-04/0022.jpg"), image("../public/translated-04/0022.jpg"))
+  #slide2x([22], image("../public/merged-04/0022.jpg"), image("../public/translated-04/0022.jpg"), header: false)
 
-  #slide2x([23], image("../public/merged-04/0023.jpg"), image("../public/translated-04/0023.jpg"))
+  #slide2x([23], image("../public/merged-04/0023.jpg"), image("../public/translated-04/0023.jpg"), header: false)
 
-  #slide2x([24], image("../public/merged-04/0024.jpg"), image("../public/translated-04/0024.jpg"))
+  #slide2x([24], image("../public/merged-04/0024.jpg"), image("../public/translated-04/0024.jpg"), header: false)
 
   #example[
     *解码 NTSC 复合信号*
@@ -162,21 +162,21 @@
 
 #slide2x([32], image("../public/merged-04/0032.jpg"), image("../public/translated-04/0032.jpg"))
 
-#slide2x([33], image("../public/merged-04/0033.jpg"), image("../public/translated-04/0033.jpg"))
+#slide2x([33], image("../public/merged-04/0033.jpg"), image("../public/translated-04/0033.jpg"), header: false)
 
 #slide2x([34], image("../public/merged-04/0034.jpg"), image("../public/translated-04/0034.jpg"), crop: 0.7)
 
-#slide2x([35], image("../public/merged-04/0035.jpg"), image("../public/translated-04/0035.jpg"), crop: 0.7)
+#slide2x([35], image("../public/merged-04/0035.jpg"), image("../public/translated-04/0035.jpg"), crop: 0.7, header: false)
 
-#slide2x([36], image("../public/merged-04/0036.jpg"), image("../public/translated-04/0036.jpg"))
+#slide2x([36], image("../public/merged-04/0036.jpg"), image("../public/translated-04/0036.jpg"), header: false)
 
 #slide2x([37], image("../public/merged-04/0037.jpg"), image("../public/translated-04/0037.jpg"), crop: 0.9)
 
-#slide2x([38], image("../public/merged-04/0038.jpg"), image("../public/translated-04/0038.jpg"))
+#slide2x([38], image("../public/merged-04/0038.jpg"), image("../public/translated-04/0038.jpg"), header: false)
 
-#slide2x([39], image("../public/merged-04/0039.jpg"), image("../public/translated-04/0039.jpg"), crop: 0.9)
+#slide2x([39], image("../public/merged-04/0039.jpg"), image("../public/translated-04/0039.jpg"), crop: 0.9, header: false)
 
-#slide2x([40], image("../public/merged-04/0040.jpg"), image("../public/translated-04/0040.jpg"), crop: 0.7)
+#slide2x([40], image("../public/merged-04/0040.jpg"), image("../public/translated-04/0040.jpg"), crop: 0.7, header: false)
 
-#slide2x([42], image("../public/merged-04/0042.jpg"), image("../public/translated-04/0042.jpg"), crop: 0.9)
+#slide2x([42], image("../public/merged-04/0042.jpg"), image("../public/translated-04/0042.jpg"), crop: 0.9, header: false)
 

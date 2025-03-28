@@ -316,7 +316,7 @@
 
 #let no-par-margin = v(-0.6em)
 
-#let slide2x(page, img1, img2, crop: none) = {
+#let slide2x(page, img1, img2, crop: none, header: true) = {
   let note-width = 1.2em
 
   let slide1x(
@@ -328,18 +328,28 @@
       width: 100%,
       stroke: current-color.get() + 0.5pt,
       inset: 0.5pt,
-      if crop == none {
+      if crop == none and header == true {
         img
       } else {
         let page-width = 595.28pt // a4
         let w = (page-width - 32mm - note-width * 2 - 1.5pt) / 2
         let h = w / 983 * 677
-        let new_h = h * crop
+        let cropped_h = h
+        if crop != none {
+          cropped_h = h * crop
+        }
+        let header_h = h * 0.16
+        if header == false {
+          cropped_h -= header_h
+        }
         box(
           width: 100%,
-          height: new_h,
+          height: cropped_h,
           clip: true,
-          inset: (bottom: -(1 - crop) * h),
+          inset: (
+            top: if header { 0pt } else { -header_h },
+            bottom: if crop == none { 0pt } else { -(1 - crop) * h},
+          ),
           img,
         )
       },
