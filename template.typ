@@ -313,11 +313,21 @@
 
 #let current-topic = state("current-topic", none)
 #let current-color = state("current-color", black)
+// #let slide-width = state("slide-width", 983)
+// #let slide-heigth = state("slide-height", 677)
 
+#let _h = h
 #let no-par-margin = v(-0.6em)
 
-#let slide2x(page, img1, img2, crop: none, header: true) = {
+#let slide2x(page, img1, img2, crop: none, header: true, h: none, cb: none) = {
   let note-width = 1.2em
+
+  if h != none {
+    header = h
+  }
+  if cb != none {
+    crop = cb
+  }
 
   let slide1x(
     img,
@@ -348,7 +358,7 @@
           clip: true,
           inset: (
             top: if header { 0pt } else { -header_h },
-            bottom: if crop == none { 0pt } else { -(1 - crop) * h},
+            bottom: if crop == none { 0pt } else { -(1 - crop) * h },
           ),
           img,
         )
@@ -358,7 +368,7 @@
 
   set align(center)
   no-par-margin
-  h(-1em)
+  _h(-1em)
   context {
     set text(fill: current-color.get())
     box(
@@ -380,7 +390,7 @@
     )
     set text(fill: black)
   }
-  h(-1em)
+  _h(-1em)
   no-par-margin
 }
 
