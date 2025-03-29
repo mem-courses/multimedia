@@ -86,13 +86,13 @@
 
 #slide2x([37], image("../public/merged-09/0037.jpg"), image("../public/translated-09/0037.jpg"), header: false)
 
-#slide2x([38], image("../public/merged-09/0038.jpg"), image("../public/translated-09/0038.jpg"))
+#slide2x([38], image("../public/merged-09/0038.jpg"), image("../public/translated-09/0038.jpg"), cb: 0.08)
 
 #slide2x([40], image("../public/merged-09/0040.jpg"), image("../public/translated-09/0040.jpg"))
 
-#slide2x([41], image("../public/merged-09/0041.jpg"), image("../public/translated-09/0041.jpg"), header: false)
+#slide2x([41], image("../public/merged-09/0041.jpg"), image("../public/translated-09/0041.jpg"), header: false, cb: 0.15)
 
-#slide2x([42], image("../public/merged-09/0042.jpg"), image("../public/translated-09/0042.jpg"), header: false)
+#slide2x([42], image("../public/merged-09/0042.jpg"), image("../public/translated-09/0042.jpg"), header: false, cb: 0.12)
 
 #slide2x([43], image("../public/merged-09/0043.jpg"), image("../public/translated-09/0043.jpg"), header: false)
 
@@ -112,19 +112,19 @@
 
 #slide2x([51], image("../public/merged-09/0051.jpg"), image("../public/translated-09/0051.jpg"), header: false)
 
-#slide2x([52], image("../public/merged-09/0052.jpg"), image("../public/translated-09/0052.jpg"), header: false)
+#slide2x([52], image("../public/merged-09/0052.jpg"), image("../public/translated-09/0052.jpg"), header: false, cb: 0.34)
 
-#slide2x([53], image("../public/merged-09/0053.jpg"), image("../public/translated-09/0053.jpg"), header: false)
+#slide2x([53], image("../public/merged-09/0053.jpg"), image("../public/translated-09/0053.jpg"), header: false, cb: 0.06)
 
 #slide2x([54], image("../public/merged-09/0054.jpg"), image("../public/translated-09/0054.jpg"), crop: 0.62, header: false)
 
-#slide2x([55], image("../public/merged-09/0055.jpg"), image("../public/translated-09/0055.jpg"), header: false)
+#slide2x([55], image("../public/merged-09/0055.jpg"), image("../public/translated-09/0055.jpg"), header: false, cb: 0.13)
 
 #slide2x([56], image("../public/merged-09/0056.jpg"), image("../public/translated-09/0056.jpg"), crop: 0.8, header: false)
 
 #slide2x([58], image("../public/merged-09/0058.jpg"), image("../public/translated-09/0058.jpg"))
 
-#slide2x([59], image("../public/merged-09/0059.jpg"), image("../public/translated-09/0059.jpg"))
+#slide2x([59], image("../public/merged-09/0059.jpg"), image("../public/translated-09/0059.jpg"), cb: 0.15)
 
 #slide2x([60], image("../public/merged-09/0060.jpg"), image("../public/translated-09/0060.jpg"), header: false)
 
@@ -142,4 +142,4 @@
 
 #slide2x([67], image("../public/merged-09/0067.jpg"), image("../public/translated-09/0067.jpg"), header: false)
 
-#slide2x([68], image("../public/merged-09/0068.jpg"), image("../public/translated-09/0068.jpg"))
+#slide2x([68], image("../public/merged-09/0068.jpg"), image("../public/translated-09/0068.jpg"), cb: 0.11)

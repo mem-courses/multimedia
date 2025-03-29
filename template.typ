@@ -326,7 +326,7 @@
     header = h
   }
   if cb != none {
-    crop = cb
+    crop = 1 - cb
   }
 
   let slide1x(
