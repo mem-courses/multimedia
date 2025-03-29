@@ -313,20 +313,37 @@
 
 #let current-topic = state("current-topic", none)
 #let current-color = state("current-color", black)
-// #let slide-width = state("slide-width", 983)
-// #let slide-heigth = state("slide-height", 677)
+#let slide-width = state("slide-width", 983)
+#let slide-height = state("slide-height", 677)
 
 #let _h = h
 #let no-par-margin = v(-0.6em)
 
-#let slide2x(page, img1, img2, crop: none, header: true, h: none, cb: none) = {
+#let slide2x(
+  page,
+  img1,
+  img2,
+  crop: none,
+  header: true,
+  h: none,
+  ct: none,
+  cb: none,
+  crop-top: 0, // within [0, 1)
+  crop-bottom: 0, // within [0, 1)
+) = {
   let note-width = 1.2em
 
-  if h != none {
-    header = h
+  if h == false or header == false {
+    crop-top = 0.16
+  }
+  if crop != none {
+    crop-bottom = 1 - crop
+  }
+  if ct != none {
+    crop-top += ct
   }
   if cb != none {
-    crop = 1 - cb
+    crop-bottom += cb
   }
 
   let slide1x(
@@ -338,27 +355,19 @@
       width: 100%,
       stroke: current-color.get() + 0.5pt,
       inset: 0.5pt,
-      if crop == none and header == true {
+      if crop-top == 0 and crop-bottom == 0 {
         img
       } else {
         let page-width = 595.28pt // a4
         let w = (page-width - 32mm - note-width * 2 - 1.5pt) / 2
-        let h = w / 983 * 677
-        let cropped_h = h
-        if crop != none {
-          cropped_h = h * crop
-        }
-        let header_h = h * 0.16
-        if header == false {
-          cropped_h -= header_h
-        }
+        let h = w / slide-width.get() * slide-height.get()
         box(
           width: 100%,
-          height: cropped_h,
+          height: (1 - crop-top - crop-bottom) * h,
           clip: true,
           inset: (
-            top: if header { 0pt } else { -header_h },
-            bottom: if crop == none { 0pt } else { -(1 - crop) * h },
+            top: -crop-top * h,
+            bottom: -crop-bottom * h,
           ),
           img,
         )
