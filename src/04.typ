@@ -2,7 +2,7 @@
 
 #show: project.with(
   course: "Fundamentals of Multimedia",
-  course_fullname: "Fsundamentals of Multimedia",
+  course_fullname: "Fundamentals of Multimedia",
   course_code: "CS2090M",
   title: link(
     "https://www.baidu.com",

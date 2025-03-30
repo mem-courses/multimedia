@@ -2,7 +2,7 @@
 
 #show: project.with(
   course: "Fundamentals of Multimedia",
-  course_fullname: "Fsundamentals of Multimedia",
+  course_fullname: "Fundamentals of Multimedia",
   course_code: "CS2090M",
   title: link(
     "https://www.baidu.com",
@@ -56,9 +56,9 @@
 
 #slide2x([9], image("../public/merged-06/0009.jpg"), image("../public/translated-06/0009.jpg"), header: false)
 
-#slide2x([10], image("../public/merged-06/0010.jpg"), image("../public/translated-06/0010.jpg"), header: false)
+#slide2x([10], image("../public/merged-06/0010.jpg"), image("../public/translated-06/0010.jpg"), header: false, cb: 0.04, ct: 0.03)
 
-#slide2x([11], image("../public/merged-06/0011.jpg"), image("../public/translated-06/0011.jpg"), header: false)
+#slide2x([11], image("../public/merged-06/0011.jpg"), image("../public/translated-06/0011.jpg"), header: false, cb: 0.08, ct: 0.08)
 
 - 信息的熵规定了编码所需平均比特数的下界：$important(eta <= overline(l))$。
 - 注意：后文介绍的除了游程编码之外的几种无损压缩算法都不是熵编码，不会受到平均码长的限制。
@@ -70,11 +70,11 @@
 - *游程编码(run-length encoding)*：核心思想——将连续重复的符号用一个计数值和该符号表示。
   - 具体到实现可能有多种方式。
 
-#slide2x([14], image("../public/merged-06/0014.jpg"), image("../public/translated-06/0014.jpg"), header: false)
+#slide2x([14], image("../public/merged-06/0014.jpg"), image("../public/translated-06/0014.jpg"), header: false, ct: 0.04, cb: 0.09)
 
 - 一种游程编码的实现：记录字符和连续出现的次数。
 
-#slide2x([15], image("../public/merged-06/0015.jpg"), image("../public/translated-06/0015.jpg"), header: false)
+#slide2x([15], image("../public/merged-06/0015.jpg"), image("../public/translated-06/0015.jpg"), header: false, ct: 0.11, cb: 0.07)
 
 - 另一种游程编码的实现：记录 $0$ 出现的字符和下一个非 $0$ 字符。
 
@@ -88,7 +88,7 @@
 
   #slide2x([18], image("../public/merged-06/0018.jpg"), image("../public/translated-06/0018.jpg"), header: false)
 
-  #slide2x([19], image("../public/merged-06/0019.jpg"), image("../public/translated-06/0019.jpg"), header: false)
+  #slide2x([19], image("../public/merged-06/0019.jpg"), image("../public/translated-06/0019.jpg"), header: false, cb: 0.07, ct: 0.03)
 ]
 
 #slide2x([20], image("../public/merged-06/0020.jpg"), image("../public/translated-06/0020.jpg"), header: false, crop: 0.92)
@@ -117,11 +117,11 @@
 
 - *自适应霍夫曼编码(Adaptive Huffman Coding)*（不要求，可以自行看书）：动态的编码-解码程序。
 
-#slide2x([28], image("../public/merged-06/0028.jpg"), image("../public/translated-06/0028.jpg"), header: false, crop: 0.82)
+#slide2x([28], image("../public/merged-06/0028.jpg"), image("../public/translated-06/0028.jpg"), header: false, cb: 0.21, ct: 0.03)
 
-#slide2x([29], image("../public/merged-06/0029.jpg"), image("../public/translated-06/0029.jpg"), header: false, crop: 0.82)
+#slide2x([29], image("../public/merged-06/0029.jpg"), image("../public/translated-06/0029.jpg"), header: false, crop: 0.82, ct: 0.02)
 
-#slide2x([30], image("../public/merged-06/0030.jpg"), image("../public/translated-06/0030.jpg"), header: false, crop: 0.91)
+#slide2x([30], image("../public/merged-06/0030.jpg"), image("../public/translated-06/0030.jpg"), header: false, cb: 0.09, ct: 0.03)
 
 #slide2x([31], image("../public/merged-06/0031.jpg"), image("../public/translated-06/0031.jpg"), header: false)
 
