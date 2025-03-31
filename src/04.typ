@@ -49,7 +49,7 @@
 
 - *逐行扫描(progressive scanning)*：在每个时间间隔内按行扫描完整图像，如 CRT显示器就采用这种方式。
 
-#slide2x([11], image("../public/merged-04/0011.jpg"), image("../public/translated-04/0011.jpg"), crop: 0.83, header: false)
+#slide2x([11], image("../public/merged-04/0011.jpg"), image("../public/translated-04/0011.jpg"), crop: 0.83, header: false, ct: 0.02)
 
 - *隔行扫描(interlaced scanning)*：逐行扫描的一个改进版本，先扫描奇数行再扫描偶数行。
   - 值得一提的是，这仍是通过沿着同一方向向量扫描进行实现的，参见下图：
@@ -67,12 +67,12 @@
 
 #slide2x([14], image("../public/merged-04/0014.jpg"), image("../public/translated-04/0014.jpg"), crop: 0.96, header: false)
 
-#slide2x([15], image("../public/merged-04/0015.jpg"), image("../public/translated-04/0015.jpg"), header: false)
+#slide2x([15], image("../public/merged-04/0015.jpg"), image("../public/translated-04/0015.jpg"), header: false, ct: 0.02)
 
 - NTSC 的扫描信号实例。
   - 对于水平回扫阶段，可以给一个“比黑更黑”的电压，并用于表示一行的开始。
 
-#slide2x([16], image("../public/merged-04/0016.jpg"), image("../public/translated-04/0016.jpg"), header: false)
+#slide2x([16], image("../public/merged-04/0016.jpg"), image("../public/translated-04/0016.jpg"), header: false, ct: 0.03)
 
 #slide2x([17], image("../public/merged-04/0017.jpg"), image("../public/translated-04/0017.jpg"), header: false)
 
@@ -113,7 +113,7 @@
 
   #slide2x([23], image("../public/merged-04/0023.jpg"), image("../public/translated-04/0023.jpg"), header: false)
 
-  #slide2x([24], image("../public/merged-04/0024.jpg"), image("../public/translated-04/0024.jpg"), header: false)
+  #slide2x([24], image("../public/merged-04/0024.jpg"), image("../public/translated-04/0024.jpg"), header: false, cb: 0.13)
 
   #example[
     *解码 NTSC 复合信号*
@@ -138,9 +138,9 @@
   ]
 ]
 
-#slide2x([25], image("../public/merged-04/0025.jpg"), image("../public/translated-04/0025.jpg"))
+#slide2x([25], image("../public/merged-04/0025.jpg"), image("../public/translated-04/0025.jpg"), cb: 0.06)
 
-#slide2x([26], image("../public/merged-04/0026.jpg"), image("../public/translated-04/0026.jpg"))
+#slide2x([26], image("../public/merged-04/0026.jpg"), image("../public/translated-04/0026.jpg"), cb: 0.08)
 
 #slide2x([27], image("../public/merged-04/0027.jpg"), image("../public/translated-04/0027.jpg"))
 
@@ -160,23 +160,23 @@
 #no-par-margin
 #align(center, image("images/2025-03-28-18-00-46.png", width: 36%))
 
-#slide2x([32], image("../public/merged-04/0032.jpg"), image("../public/translated-04/0032.jpg"))
+#slide2x([32], image("../public/merged-04/0032.jpg"), image("../public/translated-04/0032.jpg"), cb: 0.08)
 
-#slide2x([33], image("../public/merged-04/0033.jpg"), image("../public/translated-04/0033.jpg"), header: false)
+#slide2x([33], image("../public/merged-04/0033.jpg"), image("../public/translated-04/0033.jpg"), header: false, ct: 0.06, cb: 0.04)
 
 #slide2x([34], image("../public/merged-04/0034.jpg"), image("../public/translated-04/0034.jpg"), crop: 0.7)
 
-#slide2x([35], image("../public/merged-04/0035.jpg"), image("../public/translated-04/0035.jpg"), crop: 0.7, header: false)
+#slide2x([35], image("../public/merged-04/0035.jpg"), image("../public/translated-04/0035.jpg"), crop: 0.7, header: false, ct: 0.1)
 
-#slide2x([36], image("../public/merged-04/0036.jpg"), image("../public/translated-04/0036.jpg"), header: false)
+#slide2x([36], image("../public/merged-04/0036.jpg"), image("../public/translated-04/0036.jpg"), header: false, ct: 0.06, cb: 0.05)
 
 #slide2x([37], image("../public/merged-04/0037.jpg"), image("../public/translated-04/0037.jpg"), crop: 0.9)
 
-#slide2x([38], image("../public/merged-04/0038.jpg"), image("../public/translated-04/0038.jpg"), header: false)
+#slide2x([38], image("../public/merged-04/0038.jpg"), image("../public/translated-04/0038.jpg"), header: false, cb: 0.05)
 
 #slide2x([39], image("../public/merged-04/0039.jpg"), image("../public/translated-04/0039.jpg"), crop: 0.9, header: false)
 
-#slide2x([40], image("../public/merged-04/0040.jpg"), image("../public/translated-04/0040.jpg"), crop: 0.7, header: false)
+#slide2x([40], image("../public/merged-04/0040.jpg"), image("../public/translated-04/0040.jpg"), header: false, ct: 0.03, cb: 0.33)
 
 #slide2x([42], image("../public/merged-04/0042.jpg"), image("../public/translated-04/0042.jpg"), crop: 0.9, header: false)
 

@@ -71,15 +71,15 @@
   - 最直接的尝试是根据强度级别，用 $N times N$ 点矩阵替换每个像素（如果强度 \> 抖动矩阵条目，则在该条目位置打印一个“开”点）。以使用 $2 times 2$ 为例，由于 $256 > 2 times 2 + 1$，我们需要先把强度划分成 $5$ 个级别，分别对应上面的 $4 \, 3 \, 2 \, 1 \, 0$ 的矩阵，逐像素进行替换即可。
   - 注意直接使用这样的方法需要额外存储一个 $N times N$ 倍大小的 1-bit 图片，带来了额外的存储开销。
 
-  #slide2x([15], image("../public/merged-02/0015.jpg"), image("../public/translated-02/0015.jpg"), header: false)
+  #slide2x([15], image("../public/merged-02/0015.jpg"), image("../public/translated-02/0015.jpg"), header: false, ct: 0.03, cb: 0.03)
 
   - *有序抖动(ordered dithering)* 算法通过引入一个抖动矩阵，打印图片时对于每个像素点进行处理，仅当抖动矩阵对应位置的数值大于强度时，才打印，这样就不需要额外的存储空间（相当于是把比较的步骤移到了打印时进行）。上页中是 $5 times 5$ 的标准抖动矩阵，和灰度值为 15 时的打印效果。
 
-  #slide2x([16], image("../public/merged-02/0016.jpg"), image("../public/translated-02/0016.jpg"), header: false)
+  #slide2x([16], image("../public/merged-02/0016.jpg"), image("../public/translated-02/0016.jpg"), header: false, ct: 0.02, cb: 0.02)
 
   - 一个有序抖动算法的伪代码演示。
 
-  #slide2x([17], image("../public/merged-02/0017.jpg"), image("../public/translated-02/0017.jpg"), crop: 0.7, header: false)
+  #slide2x([17], image("../public/merged-02/0017.jpg"), image("../public/translated-02/0017.jpg"), header: false, cb: 0.32, ct: 0.02)
 
   #example[
     #strong[
@@ -90,19 +90,19 @@
     - 分别除以原图像的宽和高，得到一个像素可以对应多少个点 $=>$ $(3840 "/" 240) times (2880 "/" 180) = 16 times 16 = 256$
   ]
 
-  #slide2x([18], image("../public/merged-02/0018.jpg"), image("../public/translated-02/0018.jpg"), header: false)
+  #slide2x([18], image("../public/merged-02/0018.jpg"), image("../public/translated-02/0018.jpg"), header: false, ct: 0.05)
 
-  #slide2x([19], image("../public/merged-02/0019.jpg"), image("../public/translated-02/0019.jpg"), crop: 0.85, header: false)
+  #slide2x([19], image("../public/merged-02/0019.jpg"), image("../public/translated-02/0019.jpg"), crop: 0.85, header: false, ct: 0.02)
 ]
 
 
-#slide2x([21], image("../public/merged-02/0021.jpg"), image("../public/translated-02/0021.jpg"))
+#slide2x([21], image("../public/merged-02/0021.jpg"), image("../public/translated-02/0021.jpg"), cb: 0.03)
 
 - *24 位彩色图像(24-bit color image)*：每个像素使用三个字节，分别代表 #strong[红(red, R)];、#strong[绿(green, G)];、#strong[蓝(blue, B)] 三个颜色分量。
   - 每个颜色分量的值范围从 0 到 255，即每个像素是三个颜色分量的灰度值的组合。
   - 许多 24 位彩色图像实际上存储为 32 位图像，通过引入一个额外的 #strong[Alpha 通道] 值指示特殊效果信息，例如 #strong[透明度(transparency flag)];。
 
-#slide2x([22], image("../public/merged-02/0022.jpg"), image("../public/translated-02/0022.jpg"))
+#slide2x([22], image("../public/merged-02/0022.jpg"), image("../public/translated-02/0022.jpg"), cb: 0.08)
 
 - #strong[半透明(Semi-transparency)] 图像颜色计算方法：
 
@@ -130,11 +130,11 @@ $
 
   - 应用：通过 LUT 将灰度的医学图像转化为彩色图像。
 
-  #slide2x([31], image("../public/merged-02/0031.jpg"), image("../public/translated-02/0031.jpg"), header: false)
+  #slide2x([31], image("../public/merged-02/0031.jpg"), image("../public/translated-02/0031.jpg"), header: false, ct: 0.05, cb: 0.05)
 
   #slide2x([32], image("../public/merged-02/0032.jpg"), image("../public/translated-02/0032.jpg"))
 
-  #slide2x([33], image("../public/merged-02/0033.jpg"), image("../public/translated-02/0033.jpg"), crop: 0.95, header: false)
+  #slide2x([33], image("../public/merged-02/0033.jpg"), image("../public/translated-02/0033.jpg"), header: false, cb: 0.08, ct: 0.03)
 
   - 最直接的方法：直接按照 RGB 分配。
     - 人眼对 #strong[红色(R)] 和 #strong[绿色(G)] 比对 #strong[蓝色(B)] 更敏感，可以为 R 分配 3 位，G 分配 3 位，B 分配 2 位，总共 8 位。
@@ -163,19 +163,19 @@ $
 
 - #strong[图形交换格式(Graphics Interchange Format, GIF)];。
 
-#slide2x([43], image("../public/merged-02/0043.jpg"), image("../public/translated-02/0043.jpg"), crop: 0.87, header: false)
+#slide2x([43], image("../public/merged-02/0043.jpg"), image("../public/translated-02/0043.jpg"), crop: 0.87, header: false, ct: 0.05)
 
 - GIF 图像使用 #strong[LZW(Lempel-Ziv-Welch)] 压缩算法。这是一种 #strong[无损压缩(lossless compression)] 算法；对于连续色调图像，压缩率约为 50%。
 - GIF 图像最多支持于 8 位（256 色）图像。
 
-#slide2x([44], image("../public/merged-02/0044.jpg"), image("../public/translated-02/0044.jpg"), crop: 0.6, header: false)
+#slide2x([44], image("../public/merged-02/0044.jpg"), image("../public/translated-02/0044.jpg"), crop: 0.6, header: false, ct: 0.02)
 
 - GIF 图像以 #strong[隔行扫描(interlacing)] 的方式存储，可以通过四遍扫描渐进显示图像。
 - #strong[GIF89a] 支持动画和 #strong[透明色(transparent color)];。
 
 #slide2x([45], image("../public/merged-02/0045.jpg"), image("../public/translated-02/0045.jpg"))
 
-#slide2x([46], image("../public/merged-02/0046.jpg"), image("../public/translated-02/0046.jpg"), header: false)
+#slide2x([46], image("../public/merged-02/0046.jpg"), image("../public/translated-02/0046.jpg"), header: false, ct: 0.05)
 
 #slide2x([48], image("../public/merged-02/0048.jpg"), image("../public/translated-02/0048.jpg"), crop: 0.9)
 
@@ -197,11 +197,11 @@ $
 - BMP 文件有三种存储形式：原始数据、BI-RLE8、BI-RLE4。
 - 其中 #strong[游程编码(Run Length Encoding, RLE)] 是用于 BMP 图像的压缩算法。
 
-#slide2x([53], image("../public/merged-02/0053.jpg"), image("../public/translated-02/0053.jpg"), crop: 0.8, header: false)
+#slide2x([53], image("../public/merged-02/0053.jpg"), image("../public/translated-02/0053.jpg"), header: false, ct: 0.02, cb: 0.2)
 
 #slide2x([54], image("../public/merged-02/0054.jpg"), image("../public/translated-02/0054.jpg"), header: false)
 
-#slide2x([55], image("../public/merged-02/0055.jpg"), image("../public/translated-02/0055.jpg"), header: false)
+#slide2x([55], image("../public/merged-02/0055.jpg"), image("../public/translated-02/0055.jpg"), header: false, cb: 0.05)
 
 #slide2x([56], image("../public/merged-02/0056.jpg"), image("../public/translated-02/0056.jpg"), crop: 0.58)
 

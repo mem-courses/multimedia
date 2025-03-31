@@ -20,9 +20,9 @@
   page-margin: (left: 16mm, right: 16mm, top: 12mm, bottom: 12mm),
 )
 
-#slide2x([2], image("../public/merged-06/0002.jpg"), image("../public/translated-06/0002.jpg"))
+#slide2x([2], image("../public/merged-06/0002.jpg"), image("../public/translated-06/0002.jpg"), cb: 0.08)
 
-#slide2x([3], image("../public/merged-06/0003.jpg"), image("../public/translated-06/0003.jpg"), crop: 0.5)
+#slide2x([3], image("../public/merged-06/0003.jpg"), image("../public/translated-06/0003.jpg"), cb: 0.53)
 
 #slide2x([4], image("../public/merged-06/0004.jpg"), image("../public/translated-06/0004.jpg"), crop: 0.95)
 
@@ -37,13 +37,13 @@
 - *熵(entropy)* 的计算公式：$important(display(eta = H(S) = sum_(i=1)^n p_i log_2 1/p_i = -sum_(i=1)^n p_i log_2 p_i))$，其中 $p_i$ 是 *符号(symbol)* $i$ 出现的概率。
   - 其中 $display(log_2 1/p_i)$ 就是单个字符所包含的信息量，一段信息的熵就是所有字符所包含的信息量之和。
 
-#slide2x([7], image("../public/merged-06/0007.jpg"), image("../public/translated-06/0007.jpg"), header: false, crop: 0.83)
+#slide2x([7], image("../public/merged-06/0007.jpg"), image("../public/translated-06/0007.jpg"), header: false, crop: 0.83, ct: 0.07)
 
 #example[
   设一段信息中字符 $n$ 出现的概率为 $1/32$，则 $n$ 的 *信息量(the amount of information)* 为是 $5 "bit"$，这意味这把 $n$ 编码至少需要 $5$ 个二进制位。
 ]
 
-#slide2x([8], image("../public/merged-06/0008.jpg"), image("../public/translated-06/0008.jpg"), header: false)
+#slide2x([8], image("../public/merged-06/0008.jpg"), image("../public/translated-06/0008.jpg"), header: false, ct: 0.05, cb: 0.04)
 
 #example[
   *求平均码长：*
@@ -54,11 +54,11 @@
   *结论*：概率分布更为平坦时，熵更小；概率分布更集中时，熵更大。
 ]
 
-#slide2x([9], image("../public/merged-06/0009.jpg"), image("../public/translated-06/0009.jpg"), header: false)
+#slide2x([9], image("../public/merged-06/0009.jpg"), image("../public/translated-06/0009.jpg"), header: false, ct: 0.02, cb: 0.04)
 
 #slide2x([10], image("../public/merged-06/0010.jpg"), image("../public/translated-06/0010.jpg"), header: false, cb: 0.04, ct: 0.03)
 
-#slide2x([11], image("../public/merged-06/0011.jpg"), image("../public/translated-06/0011.jpg"), header: false, cb: 0.08, ct: 0.08)
+#slide2x([11], image("../public/merged-06/0011.jpg"), image("../public/translated-06/0011.jpg"), header: false, ct: 0.06, cb: 0.07)
 
 - 信息的熵规定了编码所需平均比特数的下界：$important(eta <= overline(l))$。
 - 注意：后文介绍的除了游程编码之外的几种无损压缩算法都不是熵编码，不会受到平均码长的限制。
@@ -70,11 +70,11 @@
 - *游程编码(run-length encoding)*：核心思想——将连续重复的符号用一个计数值和该符号表示。
   - 具体到实现可能有多种方式。
 
-#slide2x([14], image("../public/merged-06/0014.jpg"), image("../public/translated-06/0014.jpg"), header: false, ct: 0.04, cb: 0.09)
+#slide2x([14], image("../public/merged-06/0014.jpg"), image("../public/translated-06/0014.jpg"), header: false, ct: 0.04, cb: 0.07)
 
 - 一种游程编码的实现：记录字符和连续出现的次数。
 
-#slide2x([15], image("../public/merged-06/0015.jpg"), image("../public/translated-06/0015.jpg"), header: false, ct: 0.11, cb: 0.07)
+#slide2x([15], image("../public/merged-06/0015.jpg"), image("../public/translated-06/0015.jpg"), header: false, ct: 0.1, cb: 0.05)
 
 - 另一种游程编码的实现：记录 $0$ 出现的字符和下一个非 $0$ 字符。
 
@@ -88,7 +88,7 @@
 
   #slide2x([18], image("../public/merged-06/0018.jpg"), image("../public/translated-06/0018.jpg"), header: false)
 
-  #slide2x([19], image("../public/merged-06/0019.jpg"), image("../public/translated-06/0019.jpg"), header: false, cb: 0.07, ct: 0.03)
+  #slide2x([19], image("../public/merged-06/0019.jpg"), image("../public/translated-06/0019.jpg"), header: false, ct: 0.02, cb: 0.05)
 ]
 
 #slide2x([20], image("../public/merged-06/0020.jpg"), image("../public/translated-06/0020.jpg"), header: false, crop: 0.92)
@@ -109,7 +109,7 @@
 
 - *拓展霍夫曼编码(Extended Huffman Coding)*：可以将连续 $k$ 个字符合成一组并进行霍夫曼编码。
 
-#slide2x([26], image("../public/merged-06/0026.jpg"), image("../public/translated-06/0026.jpg"), header: false, crop: 0.95)
+#slide2x([26], image("../public/merged-06/0026.jpg"), image("../public/translated-06/0026.jpg"), header: false, ct: 0.05, cb: 0.05)
 
 - *结论*：使用拓展霍夫曼编码得到的平均码长 $overline(l)$ 严格小于 $eta + 1/k$，但这也要求符号表的大小为 $n^k$。
 
@@ -129,7 +129,7 @@
 
 #slide2x([33], image("../public/merged-06/0033.jpg"), image("../public/translated-06/0033.jpg"), header: false, crop: 0.8)
 
-#slide2x([34], image("../public/merged-06/0034.jpg"), image("../public/translated-06/0034.jpg"), header: false, crop: 0.95)
+#slide2x([34], image("../public/merged-06/0034.jpg"), image("../public/translated-06/0034.jpg"), header: false, crop: 0.95, ct: 0.04)
 
 #slide2x([35], image("../public/merged-06/0035.jpg"), image("../public/translated-06/0035.jpg"), header: false, crop: 0.95)
 
@@ -154,7 +154,7 @@
 
   - 可以观察到，“输出”和“将新的编码加入字典”两个动作必定同时发生或不发生。
 
-  #slide2x([42], image("../public/merged-06/0042.jpg"), image("../public/translated-06/0042.jpg"), header: false, crop: 0.923)
+  #slide2x([42], image("../public/merged-06/0042.jpg"), image("../public/translated-06/0042.jpg"), header: false, cb: 0.07, ct: 0.03)
 
   #slide2x([43], image("../public/merged-06/0043.jpg"), image("../public/translated-06/0043.jpg"), header: false)
 
@@ -163,7 +163,7 @@
 
 #slide2x([45], image("../public/merged-06/0045.jpg"), image("../public/translated-06/0045.jpg"), header: false, crop: 0.94)
 
-#slide2x([46], image("../public/merged-06/0046.jpg"), image("../public/translated-06/0046.jpg"), header: false)
+#slide2x([46], image("../public/merged-06/0046.jpg"), image("../public/translated-06/0046.jpg"), header: false, cb: 0.06)
 
 #topic("算术编码", blue)[
   #slide2x([47], image("../public/merged-06/0047.jpg"), image("../public/translated-06/0047.jpg"), crop: 0.9)
@@ -173,34 +173,34 @@
   - 算术编码的编码方式：根据每个字符出现的概率将编码区间分割为若干子区间（如 P49 所示），之后从 $[0,1)$ 开始递归执行：每次选出待编码字符的对应区间，将其所为剩余字符的编码区间，#boxed[递归]执行（参见下图）。递归完成后输出一个在区间内的（二进制）小数表示当前字符的编码。
 
   #no-par-margin
-  #align(center, image("images/2025-03-29-18-32-43.png", width: 56%))
+  #align(center, image("images/2025-03-29-18-32-43.png", width: 50%))
 
   #slide2x([49], image("../public/merged-06/0049.jpg"), image("../public/translated-06/0049.jpg"), header: false, crop: 0.95)
 
-  #slide2x([51], image("../public/merged-06/0051.jpg"), image("../public/translated-06/0051.jpg"), header: false)
+  #slide2x([51], image("../public/merged-06/0051.jpg"), image("../public/translated-06/0051.jpg"), header: false, cb: 0.03)
 
   #slide2x([52], image("../public/merged-06/0052.jpg"), image("../public/translated-06/0052.jpg"), header: false, crop: 0.9)
 
   #slide2x([53], image("../public/merged-06/0053.jpg"), image("../public/translated-06/0053.jpg"), header: false, crop: 0.93)
 
-  #slide2x([54], image("../public/merged-06/0054.jpg"), image("../public/translated-06/0054.jpg"), header: false, crop: 0.81)
+  #slide2x([54], image("../public/merged-06/0054.jpg"), image("../public/translated-06/0054.jpg"), header: false, crop: 0.81, ct: 0.05)
 ]
 
 #slide2x([55], image("../public/merged-06/0055.jpg"), image("../public/translated-06/0055.jpg"), crop: 0.38)
 
 #slide2x([56], image("../public/merged-06/0056.jpg"), image("../public/translated-06/0056.jpg"), crop: 0.72)
 
-#slide2x([57], image("../public/merged-06/0057.jpg"), image("../public/translated-06/0057.jpg"))
+#slide2x([57], image("../public/merged-06/0057.jpg"), image("../public/translated-06/0057.jpg"), cb: 0.04)
 
 - *差分编码(differential coding)* 的一个关键动机在于减小信息的熵。如图所示：
 
 #no-par-margin
 #align(center, image("images/2025-03-29-18-38-55.png", width: 36%))
 
-#slide2x([59], image("../public/merged-06/0059.jpg"), image("../public/translated-06/0059.jpg"))
+#slide2x([59], image("../public/merged-06/0059.jpg"), image("../public/translated-06/0059.jpg"), cb: 0.04)
 
 #slide2x([60], image("../public/merged-06/0060.jpg"), image("../public/translated-06/0060.jpg"), header: false)
 
-#slide2x([61], image("../public/merged-06/0061.jpg"), image("../public/translated-06/0061.jpg"), header: false, crop: 0.82)
+#slide2x([61], image("../public/merged-06/0061.jpg"), image("../public/translated-06/0061.jpg"), header: false, crop: 0.82, ct: 0.02)
 
-#slide2x([62], image("../public/merged-06/0062.jpg"), image("../public/translated-06/0062.jpg"), header: false, crop: 0.92)
+#slide2x([62], image("../public/merged-06/0062.jpg"), image("../public/translated-06/0062.jpg"), header: false, crop: 0.92, ct: 0.02)

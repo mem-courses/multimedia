@@ -202,15 +202,15 @@ $
 
 #slide2x([51], image("../public/merged-05/0051.jpg"), image("../public/translated-05/0051.jpg"), header: false)
 
-#slide2x([52], image("../public/merged-05/0052.jpg"), image("../public/translated-05/0052.jpg"), header: false)
+#slide2x([52], image("../public/merged-05/0052.jpg"), image("../public/translated-05/0052.jpg"), header: false, cb: 0.03)
 
-#slide2x([53], image("../public/merged-05/0053.jpg"), image("../public/translated-05/0053.jpg"))
+#slide2x([53], image("../public/merged-05/0053.jpg"), image("../public/translated-05/0053.jpg"), cb: 0.05)
 
 - *差分脉冲编码调制(Differential PCM, DPCM)*：只是在预测编码的基础上对差值进一步引入了量化，并使用霍夫曼编码存储。（具体参考 P57 的例子）
   - 注意：${hat(f)_n}$ 需由 ${tilde(f)_n}$ 而不是 ${f_n}$ 计算得到，否则会导致信号偏移！
   - 量化方法 $Q$ 可以为：$tilde(e)_n = Q[e_n] = 16 times "trunc"((255 + e_n) "/" 16) - 256 + 8$。
 
-#slide2x([54], image("../public/merged-05/0054.jpg"), image("../public/translated-05/0054.jpg"), header: false)
+#slide2x([54], image("../public/merged-05/0054.jpg"), image("../public/translated-05/0054.jpg"), header: false, cb: 0.01, ct: 0.02)
 
 #slide2x([55], image("../public/merged-05/0055.jpg"), image("../public/translated-05/0055.jpg"), header: false)
 

@@ -49,9 +49,9 @@
   - 对可见光谱的中间部分最为明暗。
   - 蓝色感受器的敏感度实际上比红色与绿色感受器小的多。
 
-#slide2x([10], image("../public/merged-03/0010.jpg"), image("../public/translated-03/0010.jpg"), header: false)
+#slide2x([10], image("../public/merged-03/0010.jpg"), image("../public/translated-03/0010.jpg"), header: false, ct: 0.03, cb: 0.02)
 
-#slide2x([11], image("../public/merged-03/0011.jpg"), image("../public/translated-03/0011.jpg"), header: false)
+#slide2x([11], image("../public/merged-03/0011.jpg"), image("../public/translated-03/0011.jpg"), header: false, cb: 0.04)
 
 #note[
   *场景：人看光源*。
@@ -65,11 +65,11 @@
 
 #slide2x([12], image("../public/merged-03/0012.jpg"), image("../public/translated-03/0012.jpg"), header: false)
 
-#slide2x([13], image("../public/merged-03/0013.jpg"), image("../public/translated-03/0013.jpg"), header: false)
+#slide2x([13], image("../public/merged-03/0013.jpg"), image("../public/translated-03/0013.jpg"), header: false, ct: 0.02)
 
 - *光谱反射率函数(surface spectral reflectance function)*：物体表面在每个波长上的反射率，用 $S(lambda)$ 表示。
 
-#slide2x([14], image("../public/merged-03/0014.jpg"), image("../public/translated-03/0014.jpg"), header: false)
+#slide2x([14], image("../public/merged-03/0014.jpg"), image("../public/translated-03/0014.jpg"), header: false, cb: 0.07)
 
 #note[
   *场景：人看物体*。
@@ -89,21 +89,21 @@
 #topic("伽马校正", blue)[
   #slide2x([16], image("../public/merged-03/0016.jpg"), image("../public/translated-03/0016.jpg"))
 
-  #slide2x([17], image("../public/merged-03/0017.jpg"), image("../public/translated-03/0017.jpg"), crop: 0.94, header: false)
+  #slide2x([17], image("../public/merged-03/0017.jpg"), image("../public/translated-03/0017.jpg"), header: false, cb: 0.06, ct: 0.02)
 
   - *Gamma 矫正* 的动机：*阴极射线管(CRT)* 输出的光线强度与驱动电压非线性关系，而是与电压 $R$ 的 $gamma$ 次方成正比：$important(L prop R^gamma)$。
 
-  #slide2x([18], image("../public/merged-03/0018.jpg"), image("../public/translated-03/0018.jpg"), header: false)
+  #slide2x([18], image("../public/merged-03/0018.jpg"), image("../public/translated-03/0018.jpg"), header: false, cb: 0.05)
 
   - *Gamma 矫正* 的方法：在把电压信号送给 CRT 之前，先对其取 $1"/"gamma$ 次方以进行校正：$important(R'=R^(1"/"gamma))$
 
-  #slide2x([19], image("../public/merged-03/0019.jpg"), image("../public/translated-03/0019.jpg"), header: false)
+  #slide2x([19], image("../public/merged-03/0019.jpg"), image("../public/translated-03/0019.jpg"), header: false, ct: 0.06)
 
   - #boxed[注意：实施上面的方法需要将电压归一化到 $[0,1]$ 的范围内]。
 
-  #slide2x([20], image("../public/merged-03/0020.jpg"), image("../public/translated-03/0020.jpg"), header: false)
+  #slide2x([20], image("../public/merged-03/0020.jpg"), image("../public/translated-03/0020.jpg"), header: false, cb: 0.08)
 
-  #slide2x([21], image("../public/merged-03/0021.jpg"), image("../public/translated-03/0021.jpg"), header: false)
+  #slide2x([21], image("../public/merged-03/0021.jpg"), image("../public/translated-03/0021.jpg"), header: false, cb: 0.08)
 
   #slide2x([22], image("../public/merged-03/0022.jpg"), image("../public/translated-03/0022.jpg"), header: false)
 
@@ -123,27 +123,27 @@
 
 #slide2x([25], image("../public/merged-03/0025.jpg"), image("../public/translated-03/0025.jpg"), header: false)
 
-#slide2x([26], image("../public/merged-03/0026.jpg"), image("../public/translated-03/0026.jpg"), header: false)
+#slide2x([26], image("../public/merged-03/0026.jpg"), image("../public/translated-03/0026.jpg"), header: false, cb: 0.1, ct: 0.02)
 
 #slide2x([27], image("../public/merged-03/0027.jpg"), image("../public/translated-03/0027.jpg"), crop: 0.95, header: false)
 
-#slide2x([28], image("../public/merged-03/0028.jpg"), image("../public/translated-03/0028.jpg"), header: false)
+#slide2x([28], image("../public/merged-03/0028.jpg"), image("../public/translated-03/0028.jpg"), header: false, cb: 0.03)
 
-#slide2x([29], image("../public/merged-03/0029.jpg"), image("../public/translated-03/0029.jpg"))
+#slide2x([29], image("../public/merged-03/0029.jpg"), image("../public/translated-03/0029.jpg"), header: false)
 
-#slide2x([30], image("../public/merged-03/0030.jpg"), image("../public/translated-03/0030.jpg"), header: false)
+#slide2x([30], image("../public/merged-03/0030.jpg"), image("../public/translated-03/0030.jpg"), header: false, ct: 0.15)
 
-#slide2x([31], image("../public/merged-03/0031.jpg"), image("../public/translated-03/0031.jpg"), header: false)
+#slide2x([31], image("../public/merged-03/0031.jpg"), image("../public/translated-03/0031.jpg"), header: false, ct: 0.15)
 
-#slide2x([32], image("../public/merged-03/0032.jpg"), image("../public/translated-03/0032.jpg"))
+#slide2x([32], image("../public/merged-03/0032.jpg"), image("../public/translated-03/0032.jpg"), cb: 0.056)
 
-#slide2x([33], image("../public/merged-03/0033.jpg"), image("../public/translated-03/0033.jpg"))
+#slide2x([33], image("../public/merged-03/0033.jpg"), image("../public/translated-03/0033.jpg"), cb: 0.05)
 
 #slide2x([34], image("../public/merged-03/0034.jpg"), image("../public/translated-03/0034.jpg"), crop: 0.9, header: false)
 
-#slide2x([35], image("../public/merged-03/0035.jpg"), image("../public/translated-03/0035.jpg"), header: false)
+#slide2x([35], image("../public/merged-03/0035.jpg"), image("../public/translated-03/0035.jpg"), header: false, ct: 0.05, cb: 0.02)
 
-#slide2x([36], image("../public/merged-03/0036.jpg"), image("../public/translated-03/0036.jpg"), header: false)
+#slide2x([36], image("../public/merged-03/0036.jpg"), image("../public/translated-03/0036.jpg"), header: false, ct: 0.04)
 
 #slide2x([37], image("../public/merged-03/0037.jpg"), image("../public/translated-03/0037.jpg"))
 
@@ -161,11 +161,11 @@
 
 #slide2x([44], image("../public/merged-03/0044.jpg"), image("../public/translated-03/0044.jpg"), crop: 0.5)
 
-#slide2x([45], image("../public/merged-03/0045.jpg"), image("../public/translated-03/0045.jpg"), header: false)
+#slide2x([45], image("../public/merged-03/0045.jpg"), image("../public/translated-03/0045.jpg"), header: false, cb: 0.09)
 
-#slide2x([46], image("../public/merged-03/0046.jpg"), image("../public/translated-03/0046.jpg"), crop: 0.8)
+#slide2x([46], image("../public/merged-03/0046.jpg"), image("../public/translated-03/0046.jpg"), cb: 0.28)
 
-#slide2x([47], image("../public/merged-03/0047.jpg"), image("../public/translated-03/0047.jpg"), header: false)
+#slide2x([47], image("../public/merged-03/0047.jpg"), image("../public/translated-03/0047.jpg"), header: false, cb: 0.07)
 
 #slide2x([48], image("../public/merged-03/0048.jpg"), image("../public/translated-03/0048.jpg"), header: false)
 
@@ -173,7 +173,7 @@
 
 #slide2x([50], image("../public/merged-03/0050.jpg"), image("../public/translated-03/0050.jpg"), header: false)
 
-#slide2x([51], image("../public/merged-03/0051.jpg"), image("../public/translated-03/0051.jpg"), crop: 0.92, header: false)
+#slide2x([51], image("../public/merged-03/0051.jpg"), image("../public/translated-03/0051.jpg"), header: false, ct: 0.09, cb: 0.08)
 
-#slide2x([52], image("../public/merged-03/0052.jpg"), image("../public/translated-03/0052.jpg"))
+#slide2x([52], image("../public/merged-03/0052.jpg"), image("../public/translated-03/0052.jpg"), cb: 0.07)
 
