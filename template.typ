@@ -11,7 +11,6 @@
 
 #let indent = 0em
 #let force-indent = 2em
-#let par-margin = 0.8em
 #let fake_par = [#text()[#v(0pt, weak: true)];#text()[#h(0em)]]
 
 #let project(
@@ -23,7 +22,7 @@
   course_fullname: "",
   semester: "",
   course_code: "",
-  page-margin: (left: 12mm, right: 12mm, top: 16mm, bottom: 16mm),
+  page-margin: (left: 4mm, right: 4mm, top: 12mm, bottom: 12mm),
 ) = {
   if (course_fullname == "") {
     course_fullname = course
@@ -34,6 +33,7 @@
 
   // 文档基本信息
   set document(author: authors.map(a => a.name), title: title)
+
   set page(
     paper: "a4",
     margin: page-margin,
@@ -43,30 +43,28 @@
 
   // 页眉
   set page(
-    header: {
-      locate(loc => {
-        if (counter(page).at(loc).at(0) == 1) {
-          return none
-        }
+    header: context {
+      if (counter(page).get().at(0) == 1) {
+        return none
+      }
 
-        set text(font: font_song, 10pt, baseline: 8pt, spacing: 3pt)
+      set text(font: font_song, 10pt, baseline: 8pt, spacing: 3pt)
 
-        grid(
-          columns: (1fr, 1fr, 1fr),
-          align(left, course),
-          [] /* align(center, title)*/,
-          align(right, date),
-        )
+      grid(
+        columns: (1fr, 1fr, 1fr),
+        align(left, course),
+        [] /* align(center, title)*/,
+        align(right, date),
+      )
 
-        line(length: 100%, stroke: 0.5pt)
-      })
+      line(length: 100%, stroke: 0.5pt)
     },
   )
 
 
   // 页脚
   set page(
-    footer: {
+    footer: context {
       set text(font: font_song, 10pt, baseline: 8pt, spacing: 3pt)
       set align(center)
 
@@ -80,11 +78,9 @@
   set text(font: font_song, lang: "en", size: 11pt)
   show math.equation: set text(weight: 400)
 
-  // Set paragraph spacing.
-  show par: set block(above: par-margin, below: par-margin)
-
   // set heading(numbering: "1.1)")
   set par(leading: 0.75em)
+  show heading: set block(below: 1em)
 
   block(
     below: 2em,
@@ -124,6 +120,9 @@
   // Main body.
   set par(justify: true)
 
+  set text(font: "Noto Sans SC", weight: "regular")
+  show math.equation: set text(font: "Cambria Math")
+  show raw: set text(size: 1.2em, font: "Consolas")
   show "。": "．"
 
   show heading.where(level: 1): it => [
@@ -149,6 +148,8 @@
     it
   }
 
+  set heading(numbering: "1.1.")
+
   body
 }
 
@@ -173,49 +174,53 @@
   ]
 }
 
-#let named_block(it, name: "", color: red, inset: 11pt) = block(
+#let named_block(it, title: none, name: "", color: red, inset: 11pt) = block(
   below: 1em,
   stroke: 0.5pt + color,
   radius: 3pt,
   width: 100%,
   inset: inset,
-)[
-  #place(
-    top + left,
-    dy: -6pt - inset, // Account for inset of block
-    dx: 8pt - inset,
-    block(fill: white, inset: 2pt)[
-      #set text(font: "Noto Sans", fill: color)
-      #strong[#name]
-    ],
-  )
-  #let fontcolor = color.darken(20%)
-  #set text(fill: fontcolor)
-  // #set par(first-line-indent_width: 0em)
-  #it
-]
+  {
+    place(
+      top + left,
+      dy: -6pt - inset, // Account for inset of block
+      dx: 8pt - inset,
+      block(fill: white, inset: 2pt)[
+        #set text(font: "Noto Sans", fill: color)
+        #strong[#name]
+      ],
+    )
+    let fontcolor = color.darken(20%)
+    set text(fill: fontcolor)
+    // #set par(first-line-indent_width: 0em)
 
-#let example(it) = named_block(it, name: "Example", color: gray.darken(60%))
-#let proof(it) = named_block(it, name: "Proof", color: rgb(120, 120, 120))
-#let abstract(it) = named_block(it, name: "Abstract", color: rgb(0, 133, 143))
-#let summary(it) = named_block(it, name: "Summary", color: rgb(0, 133, 143))
-#let info(it) = named_block(it, name: "Info", color: rgb(68, 115, 218))
-#let note(name: "Note", it) = named_block(it, name: name, color: rgb(68, 115, 218))
-#let definition(name: "Definition", it) = named_block(it, name: name, color: rgb(68, 115, 218))
-#let theorem(name: "Theorem", it) = named_block(it, name: name, color: rgb(0, 133, 91))
-#let tip(it) = named_block(it, name: "Tip", color: rgb(0, 133, 91))
-#let hint(it) = named_block(it, name: "Hint", color: rgb(0, 133, 91))
-#let success(it) = named_block(it, name: "Success", color: rgb(62, 138, 0))
-#let help(it) = named_block(it, name: "Help", color: rgb(153, 110, 36))
-#let warning(it) = named_block(it, name: "Warning", color: rgb(184, 95, 0))
-#let attention(it) = named_block(it, name: "Attention", color: rgb(216, 58, 49))
-#let caution(it) = named_block(it, name: "Caution", color: rgb(216, 58, 49))
-#let failure(it) = named_block(it, name: "Failure", color: rgb(216, 58, 49))
-#let danger(it) = named_block(it, name: "Danger", color: rgb(216, 58, 49))
-#let error(it) = named_block(it, name: "Error", color: rgb(216, 58, 49))
-#let bug(it) = named_block(it, name: "Bug", color: rgb(204, 51, 153))
-#let quote(it) = named_block(it, name: "Quote", color: rgb(132, 90, 231))
-#let cite(it) = named_block(it, name: "Cite", color: rgb(132, 90, 231))
+    if (title != none) {
+      par(strong(title))
+    }
+
+    it
+  },
+)
+
+#let example(it, title: none) = named_block(it, title: title, name: "Example", color: gray.darken(60%))
+#let proof(it, title: none) = named_block(it, title: title, name: "Proof", color: rgb(120, 120, 120))
+#let abstract(it, title: none) = named_block(it, title: title, name: "Abstract", color: rgb(0, 133, 143))
+#let summary(it, title: none) = named_block(it, title: title, name: "Summary", color: rgb(0, 133, 143))
+#let info(it, title: none) = named_block(it, title: title, name: "Info", color: rgb(68, 115, 218))
+#let note(it, title: none) = named_block(it, title: title, name: "Note", color: rgb(68, 115, 218))
+#let tip(it, title: none) = named_block(it, title: title, name: "Tip", color: rgb(0, 133, 91))
+#let hint(it, title: none) = named_block(it, title: title, name: "Hint", color: rgb(0, 133, 91))
+#let success(it, title: none) = named_block(it, title: title, name: "Success", color: rgb(62, 138, 0))
+#let help(it, title: none) = named_block(it, title: title, name: "Help", color: rgb(153, 110, 36))
+#let warning(it, title: none) = named_block(it, title: title, name: "Warning", color: rgb(184, 95, 0))
+#let attention(it, title: none) = named_block(it, title: title, name: "Attention", color: rgb(216, 58, 49))
+#let caution(it, title: none) = named_block(it, title: title, name: "Caution", color: rgb(216, 58, 49))
+#let failure(it, title: none) = named_block(it, title: title, name: "Failure", color: rgb(216, 58, 49))
+#let danger(it, title: none) = named_block(it, title: title, name: "Danger", color: rgb(216, 58, 49))
+#let error(it, title: none) = named_block(it, title: title, name: "Error", color: rgb(216, 58, 49))
+#let bug(it, title: none) = named_block(it, title: title, name: "Bug", color: rgb(204, 51, 153))
+#let quote(it, title: none) = named_block(it, title: title, name: "Quote", color: rgb(132, 90, 231))
+#let cite(it, title: none) = named_block(it, title: title, name: "Cite", color: rgb(132, 90, 231))
 
 #let table3-global-align = align
 #let table3(
@@ -311,10 +316,12 @@
 
 #let hr = line(length: 100%, stroke: 0.5pt + luma(200))
 
+#let _current-color_default = luma(150)
 #let current-topic = state("current-topic", none)
-#let current-color = state("current-color", black)
-#let slide-width = state("slide-width", 983)
-#let slide-height = state("slide-height", 677)
+#let current-color = state("current-color", _current-color_default)
+#let slide-width = state("slide-width", 16)
+#let slide-height = state("slide-height", 10)
+#let slide-header-height = state("slide-header-height", 0.15)
 
 #let _h = h
 #let no-par-margin = v(-0.6em)
@@ -328,28 +335,29 @@
   h: none,
   ct: none,
   cb: none,
-  crop-top: 0, // within [0, 1)
-  crop-bottom: 0, // within [0, 1)
 ) = {
   let note-width = 1.2em
-
-  if h == false or header == false {
-    crop-top = 0.16
-  }
-  if crop != none {
-    crop-bottom = 1 - crop
-  }
-  if ct != none {
-    crop-top += ct
-  }
-  if cb != none {
-    crop-bottom += cb
-  }
 
   let slide1x(
     img,
     border-color: black,
   ) = {
+    let crop-top = 0 // within [0, 1)
+    let crop-bottom = 0 // within [0, 1)
+
+    if h == false or header == false {
+      crop-top += slide-header-height.get()
+    }
+    if crop != none {
+      crop-bottom += 1 - crop
+    }
+    if ct != none {
+      crop-top += ct
+    }
+    if cb != none {
+      crop-bottom += cb
+    }
+
     set image(width: 100%)
     context box(
       width: 100%,
@@ -359,7 +367,7 @@
         img
       } else {
         let page-width = 595.28pt // a4
-        let w = (page-width - 32mm - note-width * 2 - 1.5pt) / 2
+        let w = (page-width - 4mm * 2 - note-width * 2 - 1.5pt) / 2
         let h = w / slide-width.get() * slide-height.get()
         box(
           width: 100%,
@@ -419,7 +427,7 @@
   current-color.update(x => color)
   content
   current-topic.update(x => none)
-  current-color.update(x => black)
+  current-color.update(x => _current-color_default)
 }
 
 #let boxed(it) = {
@@ -427,6 +435,12 @@
   box(
     stroke: black + 0.5pt,
     inset: 1pt,
+    it,
+  )
+}
+#let mark(it) = {
+  box(
+    fill: yellow,
     it,
   )
 }
