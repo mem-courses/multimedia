@@ -20,6 +20,9 @@
   page-margin: (left: 16mm, right: 16mm, top: 12mm, bottom: 12mm),
 )
 
+#slide-width.update(x => 976)
+#slide-height.update(x => 670)
+
 #slide2x([2], image("../public/merged-09/0002.jpg"), image("../public/translated-09/0002.jpg"), crop: 0.6)
 
 #slide2x([4], image("../public/merged-09/0004.jpg"), image("../public/translated-09/0004.jpg"))

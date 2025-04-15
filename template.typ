@@ -367,7 +367,7 @@
         img
       } else {
         let page-width = 595.28pt // a4
-        let w = (page-width - 4mm * 2 - note-width * 2 - 1.5pt) / 2
+        let w = (page-width - 16mm * 2 - note-width * 2 - 1.5pt) / 2
         let h = w / slide-width.get() * slide-height.get()
         box(
           width: 100%,

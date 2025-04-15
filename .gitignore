@@ -1,5 +1,6 @@
-/public
-/assets/merged
+/public/
+/assets/merged/
+/replay/
 
 /template.pdf
 /src/**/*.pdf
