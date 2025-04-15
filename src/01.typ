@@ -20,6 +20,9 @@
   page-margin: (left: 16mm, right: 16mm, top: 12mm, bottom: 12mm),
 )
 
+#slide-width.update(x => 976)
+#slide-height.update(x => 670)
+
 #slide2x([2], image("../public/merged-01/0002.jpg"), image("../public/translated-01/0002.jpg"), crop: 0.48)
 
 #slide2x([3], image("../public/merged-01/0003.jpg"), image("../public/translated-01/0003.jpg"), crop: 0.74)
@@ -116,7 +119,7 @@
 
 #slide2x([50], image("../public/merged-01/0050.jpg"), image("../public/translated-01/0050.jpg"), h: false, cb: 0.13)
 
-#slide2x([51], image("../public/merged-01/0051.jpg"), image("../public/translated-01/0051.jpg"), h: false, cb: 0.2)
+#slide2x([51], image("../public/merged-01/0051.jpg"), image("../public/translated-01/0051.jpg"), h: false, ct: 0.02, cb: 0.2)
 
 #slide2x([52], image("../public/merged-01/0052.jpg"), image("../public/translated-01/0052.jpg"), cb: 0.04)
 

@@ -20,9 +20,13 @@
   page-margin: (left: 16mm, right: 16mm, top: 12mm, bottom: 12mm),
 )
 
-#slide2x([2], image("../public/merged-02/0002.jpg"), image("../public/translated-02/0002.jpg"), crop: 0.92)
+#slide-width.update(x => 983)
+#slide-height.update(x => 677)
+#outline(title: [TOC], indent: 2em)
 
-#slide2x([3], image("../public/merged-02/0003.jpg"), image("../public/translated-02/0003.jpg"), crop: 0.76)
+= Basic Graphics/Image Types | 基本图形/图像类型
+
+== 1-Bit Image
 
 #slide2x([4], image("../public/merged-02/0004.jpg"), image("../public/translated-02/0004.jpg"), crop: 0.95)
 
@@ -37,6 +41,8 @@
 #slide2x([6], image("../public/merged-02/0006.jpg"), image("../public/translated-02/0006.jpg"), crop: 0.92)
 
 #example[*计算 1 位图像的文件大小*。见上页。]
+
+== 8-Bit Gray-level Image
 
 #slide2x([8], image("../public/merged-02/0008.jpg"), image("../public/translated-02/0008.jpg"), crop: 0.9)
 
@@ -95,6 +101,7 @@
   #slide2x([19], image("../public/merged-02/0019.jpg"), image("../public/translated-02/0019.jpg"), crop: 0.85, header: false, ct: 0.02)
 ]
 
+== 24-Bit Color Image
 
 #slide2x([21], image("../public/merged-02/0021.jpg"), image("../public/translated-02/0021.jpg"), cb: 0.03)
 
@@ -110,6 +117,8 @@
 $
 upright("半透明图像颜色") = upright("源图像颜色") times \( 100 % - upright("透明度") \) + upright("背景图像颜色") times upright("透明度")
 $
+
+== 8-Bit Color Image
 
 #slide2x([26], image("../public/merged-02/0026.jpg"), image("../public/translated-02/0026.jpg"), crop: 0.85)
 
@@ -157,7 +166,9 @@ $
   #slide2x([39], image("../public/merged-02/0039.jpg"), image("../public/translated-02/0039.jpg"), crop: 0.9, header: false)
 ]
 
-#slide2x([40], image("../public/merged-02/0040.jpg"), image("../public/translated-02/0040.jpg"), crop: 0.8)
+= Image File Formats | 图像文件格式
+
+== GIF Image
 
 #slide2x([42], image("../public/merged-02/0042.jpg"), image("../public/translated-02/0042.jpg"), crop: 0.86)
 
@@ -177,6 +188,8 @@ $
 
 #slide2x([46], image("../public/merged-02/0046.jpg"), image("../public/translated-02/0046.jpg"), header: false, ct: 0.05)
 
+== JPEG Image
+
 #slide2x([48], image("../public/merged-02/0048.jpg"), image("../public/translated-02/0048.jpg"), crop: 0.9)
 
 - #strong[联合图像专家组(Joint Photographic Experts Group, JPEG)] 图片允许用户设置所需的 #strong[质量级别(quality level)] 或 #strong[压缩比(compression ratio)];（输入大小除以输出大小）。
@@ -191,6 +204,8 @@ $
     align(center, image("images/2025-03-28-15-08-31.png", width: 100%)),
   ),
 )
+
+== BMP Image
 
 #slide2x([52], image("../public/merged-02/0052.jpg"), image("../public/translated-02/0052.jpg"), crop: 0.88)
 
