@@ -100,7 +100,7 @@ $
 
 #slide2x([17], image("../public/merged-05/0017.jpg"), image("../public/translated-05/0017.jpg"), header: false)
 
-- *信号量噪比(signal-to-quantization noise ratio, SQNR)*：正确信号的功率平方与量化噪声功率平方之比，衡量了信号引入的误差。（量化：将连续的电压转化为离散的整数以存储）
+- *信号量噪比(signal-to-quantization noise ratio, SQNR)*：正确信号的功率平方与量化噪声功率平方之比，衡量了量化过程中引入的舍入误差。（量化：将连续的电压转化为离散的整数以存储）
   - 设量化精度为 $N$ 位，则相应的 SQNR 为：
 
 #no-par-margin
@@ -138,9 +138,9 @@ $
 
 #slide2x([27], image("../public/merged-05/0027.jpg"), image("../public/translated-05/0027.jpg"), header: false)
 
-#slide2x([28], image("../public/merged-05/0028.jpg"), image("../public/translated-05/0028.jpg"), header: false)
+#slide2x([28], image("../public/merged-05/0028.jpg"), image("../public/translated-05/0028.jpg"), header: false, ct: 0.11, cb: 0.12)
 
-#slide2x([29], image("../public/merged-05/0029.jpg"), image("../public/translated-05/0029.jpg"), crop: 0.68, header: false)
+#slide2x([29], image("../public/merged-05/0029.jpg"), image("../public/translated-05/0029.jpg"), header: false, cb: 0.34, ct: 0.02)
 
 #slide2x([30], image("../public/merged-05/0030.jpg"), image("../public/translated-05/0030.jpg"), crop: 0.47)
 
@@ -186,13 +186,13 @@ $
 
 #slide2x([46], image("../public/merged-05/0046.jpg"), image("../public/translated-05/0046.jpg"), header: false)
 
-#slide2x([47], image("../public/merged-05/0047.jpg"), image("../public/translated-05/0047.jpg"), cb: 0.02)
+#slide2x([47], image("../public/merged-05/0047.jpg"), image("../public/translated-05/0047.jpg"), cb: 0.06)
+
+#slide2x([48], image("../public/merged-05/0048.jpg"), image("../public/translated-05/0048.jpg"), header: false, ct: 0.02)
 
 - *预测编码(prediction coding)*：同样利用音频信号的时间冗余性，通过线性函数对下一信号进行预测，只需要存储实际信号与预测信号的差值。
   - 一种线性预测器如：$hat(f)_n = floor(1/2 (f_(n-1) + f_(n-2))) e_n = f_n - hat(f)_n$。
   - 这一差值可以通过动态范围存储，来进一步压缩比特流长度。
-
-#slide2x([48], image("../public/merged-05/0048.jpg"), image("../public/translated-05/0048.jpg"), header: false)
 
 #slide2x([49], image("../public/merged-05/0049.jpg"), image("../public/translated-05/0049.jpg"), header: false)
 
