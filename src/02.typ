@@ -28,7 +28,7 @@
 
 == 1-Bit Image
 
-#slide2x([4], image("../public/merged-02/0004.jpg"), image("../public/translated-02/0004.jpg"), crop: 0.95)
+#slide2x([4], image("../public/merged-02/0004.jpg"), image("../public/translated-02/0004.jpg"), cb: 9)
 
 - *1 位图像(1-bit image)*，也称为 *二值图像(binary image)* 或 *单色图像(monochrome image)*。
 - 每个像素存储为单个位，通常 0 代表黑色，1 代表白色。
@@ -36,9 +36,9 @@
 #no-par-margin
 #align(center, image("images/2025-03-28-15-04-22.png", width: 30%))
 
-#slide2x([5], image("../public/merged-02/0005.jpg"), image("../public/translated-02/0005.jpg"), crop: 0.56)
+#slide2x([5], image("../public/merged-02/0005.jpg"), image("../public/translated-02/0005.jpg"), cb: 45)
 
-#slide2x([6], image("../public/merged-02/0006.jpg"), image("../public/translated-02/0006.jpg"), crop: 0.92)
+#slide2x([6], image("../public/merged-02/0006.jpg"), image("../public/translated-02/0006.jpg"), cb: 9)
 
 #example[*计算 1 位图像的文件大小*。见上页。]
 
@@ -46,24 +46,24 @@
 
 #slide2x([8], image("../public/merged-02/0008.jpg"), image("../public/translated-02/0008.jpg"), crop: 0.9)
 
-#slide2x([9], image("../public/merged-02/0009.jpg"), image("../public/translated-02/0009.jpg"), crop: 0.95)
+#slide2x([9], image("../public/merged-02/0009.jpg"), image("../public/translated-02/0009.jpg"), cb: 10)
 
 - 每个像素用单个 *字节(byte)* 表示 *灰度值(gray value)*，范围为 0 到 255。
 - #strong[位图(bitmap)];：整个图像可以被看做是一个二维像素值数组，因此也被称为位图。
 
-#slide2x([10], image("../public/merged-02/0010.jpg"), image("../public/translated-02/0010.jpg"), crop: 0.9, header: false)
+#slide2x([10], image("../public/merged-02/0010.jpg"), image("../public/translated-02/0010.jpg"), cb: 14, ct: 4, header: false)
 
 - *位平面(bitplane)*：将图像中所有像素的处于同一位位置的比特提取出来，组成一个新的二值图像 (黑白图像) ，就是一个 1 位位平面。
   - 8 位灰度图像可以看作是 8 个 1 位的集合。所有位平面共同构成一个字节，存储 $0 tilde.op 255$ 之间的灰度值。
 
-#slide2x([11], image("../public/merged-02/0011.jpg"), image("../public/translated-02/0011.jpg"), crop: 0.85)
+#slide2x([11], image("../public/merged-02/0011.jpg"), image("../public/translated-02/0011.jpg"), cb: 18)
 
 #example[*计算 8 位图像的文件大小*。见上页。]
 
 #topic("抖动", blue)[
-  #slide2x([12], image("../public/merged-02/0012.jpg"), image("../public/translated-02/0012.jpg"), crop: 0.9)
+  #slide2x([12], image("../public/merged-02/0012.jpg"), image("../public/translated-02/0012.jpg"), cb: 13)
 
-  #slide2x([13], image("../public/merged-02/0013.jpg"), image("../public/translated-02/0013.jpg"), crop: 0.7, header: false)
+  #slide2x([13], image("../public/merged-02/0013.jpg"), image("../public/translated-02/0013.jpg"), cb: 31, ct: 4, header: false)
 
   - 为了在 1-bit 打印机上打印灰度图像，通常可以使用 #strong[抖动(dithering)] 技术。
     - 抖动技术的核心思想是将 #strong[强度分辨率(intensity resolution)] 转换为 #strong[空间分辨率(spatial resolution)]——即用更大的图案（$N times N$ 的矩阵）替换像素值，使得打印点的数量近似于模拟 #strong[半色调打印(halftone printing)] 中使用的不同大小的墨水圆盘。
@@ -72,7 +72,7 @@
   #no-par-margin
   #align(center, image("images/2025-03-28-15-05-17.png", width: 32%))
 
-  #slide2x([14], image("../public/merged-02/0014.jpg"), image("../public/translated-02/0014.jpg"), header: false)
+  #slide2x([14], image("../public/merged-02/0014.jpg"), image("../public/translated-02/0014.jpg"), header: false, ct: 4, cb: 7)
 
   - 最直接的尝试是根据强度级别，用 $N times N$ 点矩阵替换每个像素（如果强度 \> 抖动矩阵条目，则在该条目位置打印一个“开”点）。以使用 $2 times 2$ 为例，由于 $256 > 2 times 2 + 1$，我们需要先把强度划分成 $5$ 个级别，分别对应上面的 $4 \, 3 \, 2 \, 1 \, 0$ 的矩阵，逐像素进行替换即可。
   - 注意直接使用这样的方法需要额外存储一个 $N times N$ 倍大小的 1-bit 图片，带来了额外的存储开销。
@@ -85,7 +85,7 @@
 
   - 一个有序抖动算法的伪代码演示。
 
-  #slide2x([17], image("../public/merged-02/0017.jpg"), image("../public/translated-02/0017.jpg"), header: false, cb: 0.32, ct: 0.02)
+  #slide2x([17], image("../public/merged-02/0017.jpg"), image("../public/translated-02/0017.jpg"), header: false, cb: 0.32, ct: 4)
 
   #example[
     #strong[
@@ -96,9 +96,9 @@
     - 分别除以原图像的宽和高，得到一个像素可以对应多少个点 $=>$ $(3840 "/" 240) times (2880 "/" 180) = 16 times 16 = 256$
   ]
 
-  #slide2x([18], image("../public/merged-02/0018.jpg"), image("../public/translated-02/0018.jpg"), header: false, ct: 0.05)
+  #slide2x([18], image("../public/merged-02/0018.jpg"), image("../public/translated-02/0018.jpg"), header: false, ct: 8)
 
-  #slide2x([19], image("../public/merged-02/0019.jpg"), image("../public/translated-02/0019.jpg"), crop: 0.85, header: false, ct: 0.02)
+  #slide2x([19], image("../public/merged-02/0019.jpg"), image("../public/translated-02/0019.jpg"), crop: 0.85, header: false, ct: 3)
 ]
 
 == 24-Bit Color Image
@@ -115,7 +115,7 @@
 
 #no-par-margin
 $
-upright("半透明图像颜色") = upright("源图像颜色") times \( 100 % - upright("透明度") \) + upright("背景图像颜色") times upright("透明度")
+  upright("半透明图像颜色") = upright("源图像颜色") times \( 100 % - upright("透明度") \) + upright("背景图像颜色") times upright("透明度")
 $
 
 == 8-Bit Color Image
@@ -133,13 +133,15 @@ $
   - *颜色查找表(color lookup table, LUT)*（也称为 *调色板(palette)*）技术：每个像素存储的是一个索引而不是真实的颜色值，需要在 LUT 中查询真是的颜色值。
   - 通常选择最重要的 256 种颜色构建 LUT，这可以通过聚类方法或 *中位切割算法(Median-cut Algorithm)* 实现。
 
-  #slide2x([29], image("../public/merged-02/0029.jpg"), image("../public/translated-02/0029.jpg"), crop: 0.72)
+  #slide2x([29], image("../public/merged-02/0029.jpg"), image("../public/translated-02/0029.jpg"), cb: 31)
 
-  #slide2x([30], image("../public/merged-02/0030.jpg"), image("../public/translated-02/0030.jpg"), crop: 0.8)
+  #example(title: [应用：通过 LUT 将灰度的医学图像转化为彩色图像])[
+    #no-par-margin
+    #align(center, image("images/2025-04-16-22-18-25.png", width: 60%))
+    #no-par-margin
+  ]
 
-  - 应用：通过 LUT 将灰度的医学图像转化为彩色图像。
-
-  #slide2x([31], image("../public/merged-02/0031.jpg"), image("../public/translated-02/0031.jpg"), header: false, ct: 0.05, cb: 0.05)
+  #slide2x([31], image("../public/merged-02/0031.jpg"), image("../public/translated-02/0031.jpg"), header: false, ct: 9, cb: 8)
 
   #slide2x([32], image("../public/merged-02/0032.jpg"), image("../public/translated-02/0032.jpg"))
 
@@ -163,7 +165,7 @@ $
 
   #slide2x([38], image("../public/merged-02/0038.jpg"), image("../public/translated-02/0038.jpg"), header: false)
 
-  #slide2x([39], image("../public/merged-02/0039.jpg"), image("../public/translated-02/0039.jpg"), crop: 0.9, header: false)
+  #slide2x([39], image("../public/merged-02/0039.jpg"), image("../public/translated-02/0039.jpg"), crop: 0.9, header: false, ct: 3)
 ]
 
 = Image File Formats | 图像文件格式
@@ -184,13 +186,13 @@ $
 - GIF 图像以 #strong[隔行扫描(interlacing)] 的方式存储，可以通过四遍扫描渐进显示图像。
 - #strong[GIF89a] 支持动画和 #strong[透明色(transparent color)];。
 
-#slide2x([45], image("../public/merged-02/0045.jpg"), image("../public/translated-02/0045.jpg"))
+#slide2x([45], image("../public/merged-02/0045.jpg"), image("../public/translated-02/0045.jpg"), cb: 4)
 
-#slide2x([46], image("../public/merged-02/0046.jpg"), image("../public/translated-02/0046.jpg"), header: false, ct: 0.05)
+#slide2x([46], image("../public/merged-02/0046.jpg"), image("../public/translated-02/0046.jpg"), header: false, ct: 9, cb: 3)
 
 == JPEG Image
 
-#slide2x([48], image("../public/merged-02/0048.jpg"), image("../public/translated-02/0048.jpg"), crop: 0.9)
+#slide2x([48], image("../public/merged-02/0048.jpg"), image("../public/translated-02/0048.jpg"), cb: 13)
 
 - #strong[联合图像专家组(Joint Photographic Experts Group, JPEG)] 图片允许用户设置所需的 #strong[质量级别(quality level)] 或 #strong[压缩比(compression ratio)];（输入大小除以输出大小）。
 

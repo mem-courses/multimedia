@@ -32,19 +32,19 @@
 - #strong[光(light)] 是一种#strong[电磁波(electromagnetic
   wave)];，其颜色由#strong[波长(wavelength)] 决定。
 
-#slide2x([5], image("../public/merged-03/0005.jpg"), image("../public/translated-03/0005.jpg"), crop: 0.95, header: false)
+#slide2x([5], image("../public/merged-03/0005.jpg"), image("../public/translated-03/0005.jpg"), cb: 7, ct: 3, header: false)
 
 - #strong[分光光度计(spectrophotometer)];：一种用于测量可见光的设备，它通过衍射光栅（一种刻有规则纹路的表面）反射光线，将不同波长的光分散开来。
 
-#slide2x([6], image("../public/merged-03/0006.jpg"), image("../public/translated-03/0006.jpg"), header: false)
+#slide2x([6], image("../public/merged-03/0006.jpg"), image("../public/translated-03/0006.jpg"), header: false, ct: 3)
 
 - #strong[光谱功率分布(Spectral Power Distribution, SPD)]：在每个波长上的相对功率分布，用 $E(lambda)$ 表示。
 
-#slide2x([7], image("../public/merged-03/0007.jpg"), image("../public/translated-03/0007.jpg"), crop: 0.9, header: false)
+#slide2x([7], image("../public/merged-03/0007.jpg"), image("../public/translated-03/0007.jpg"), crop: 0.9, header: false, ct: 3)
 
 - *人类视觉(human vision)* 的原理：像相机一样，通过将图像聚焦到 *视网膜(retina)* 上的 *晶状体(lens)* 上。
 
-#slide2x([8], image("../public/merged-03/0008.jpg"), image("../public/translated-03/0008.jpg"), header: false)
+#slide2x([8], image("../public/merged-03/0008.jpg"), image("../public/translated-03/0008.jpg"), header: false, ct: 3)
 
 #slide2x([9], image("../public/merged-03/0009.jpg"), image("../public/translated-03/0009.jpg"), header: false)
 

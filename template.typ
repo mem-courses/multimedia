@@ -128,15 +128,15 @@
   show heading.where(level: 1): it => [
     #definition_counter.update(x => 0)
     #theorem_counter.update(x => 0)
-    #set text(size: 1.2em)
     #it
-    #v(0.15em)
   ]
+  show heading.where(level: 1): it => block(it, above: 1.25em, below: 1em)
 
   show heading.where(level: 2): it => [
     #theorem_counter.update(x => 0)
     #it
   ]
+  show heading.where(level: 2): it => block(it, above: 1.25em, below: 1em)
 
   set par(first-line-indent: indent)
   set table(inset: 5pt, stroke: 0.5pt, align: horizon + center)
