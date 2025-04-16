@@ -22,12 +22,15 @@
 
 #slide-width.update(x => 976)
 #slide-height.update(x => 670)
+#outline(title: [TOC], indent: 2em)
 
-#slide2x([2], image("../public/merged-09/0002.jpg"), image("../public/translated-09/0002.jpg"), crop: 0.6)
+= Introduction to Video Compression | 视频压缩简介
 
 #slide2x([4], image("../public/merged-09/0004.jpg"), image("../public/translated-09/0004.jpg"))
 
-#slide2x([5], image("../public/merged-09/0005.jpg"), image("../public/translated-09/0005.jpg"), crop: 0.5)
+#slide2x([5], image("../public/merged-09/0005.jpg"), image("../public/translated-09/0005.jpg"), cb: 55)
+
+- 视频压缩的三个方向：冗余的颜色信息、空间信息、时间信息。
 
 #slide2x([6], image("../public/merged-09/0006.jpg"), image("../public/translated-09/0006.jpg"))
 
@@ -47,63 +50,74 @@
 
 #slide2x([14], image("../public/merged-09/0014.jpg"), image("../public/translated-09/0014.jpg"), header: false)
 
+= Motion Compensation | 运动补偿
+
+- 想法：改进视频帧的差分——通过运动估计与运动补偿。
+  - 主要来源：相机或物体的移动。
+  - 运动向量搜索：找到当前帧中的物体在参考帧中的匹配位置。
+  - 运动补偿：将
+
 #slide2x([16], image("../public/merged-09/0016.jpg"), image("../public/translated-09/0016.jpg"))
 
 #slide2x([17], image("../public/merged-09/0017.jpg"), image("../public/translated-09/0017.jpg"), header: false)
 
-#slide2x([18], image("../public/merged-09/0018.jpg"), image("../public/translated-09/0018.jpg"))
+#slide2x([18], image("../public/merged-09/0018.jpg"), image("../public/translated-09/0018.jpg"), cb: 11)
 
-#slide2x([19], image("../public/merged-09/0019.jpg"), image("../public/translated-09/0019.jpg"), header: false)
+#slide2x([19], image("../public/merged-09/0019.jpg"), image("../public/translated-09/0019.jpg"), header: false, cb: 26, ct: 3)
 
-#slide2x([20], image("../public/merged-09/0020.jpg"), image("../public/translated-09/0020.jpg"), header: false)
+#slide2x([20], image("../public/merged-09/0020.jpg"), image("../public/translated-09/0020.jpg"), header: false, cb: 9, ct: 2)
 
-#slide2x([21], image("../public/merged-09/0021.jpg"), image("../public/translated-09/0021.jpg"), header: false)
+#slide2x([21], image("../public/merged-09/0021.jpg"), image("../public/translated-09/0021.jpg"), header: false, ct: 3, cb: 3)
 
-#slide2x([22], image("../public/merged-09/0022.jpg"), image("../public/translated-09/0022.jpg"), header: false)
+#slide2x([22], image("../public/merged-09/0022.jpg"), image("../public/translated-09/0022.jpg"), header: false, cb: 9, ct: 4)
 
-#slide2x([24], image("../public/merged-09/0024.jpg"), image("../public/translated-09/0024.jpg"))
+= Search for Motion Vectors | 运动向量搜索
+
+#slide2x([24], image("../public/merged-09/0024.jpg"), image("../public/translated-09/0024.jpg"), cb: 5)
 
 #slide2x([25], image("../public/merged-09/0025.jpg"), image("../public/translated-09/0025.jpg"))
 
-#slide2x([26], image("../public/merged-09/0026.jpg"), image("../public/translated-09/0026.jpg"), header: false)
+#slide2x([26], image("../public/merged-09/0026.jpg"), image("../public/translated-09/0026.jpg"), header: false, ct: 9, cb: 18)
 
-#slide2x([27], image("../public/merged-09/0027.jpg"), image("../public/translated-09/0027.jpg"))
+#slide2x([27], image("../public/merged-09/0027.jpg"), image("../public/translated-09/0027.jpg"), cb: 7)
 
-#slide2x([28], image("../public/merged-09/0028.jpg"), image("../public/translated-09/0028.jpg"), header: false)
+#slide2x([28], image("../public/merged-09/0028.jpg"), image("../public/translated-09/0028.jpg"), header: false, cb: 2)
 
-#slide2x([29], image("../public/merged-09/0029.jpg"), image("../public/translated-09/0029.jpg"))
+#slide2x([29], image("../public/merged-09/0029.jpg"), image("../public/translated-09/0029.jpg"), cb: 6)
 
 #slide2x([30], image("../public/merged-09/0030.jpg"), image("../public/translated-09/0030.jpg"), header: false)
 
-#slide2x([31], image("../public/merged-09/0031.jpg"), image("../public/translated-09/0031.jpg"), header: false)
+#slide2x([31], image("../public/merged-09/0031.jpg"), image("../public/translated-09/0031.jpg"), header: false, ct: 2, cb: 1)
 
-#slide2x([32], image("../public/merged-09/0032.jpg"), image("../public/translated-09/0032.jpg"), crop: 0.68, header: false)
+#slide2x([32], image("../public/merged-09/0032.jpg"), image("../public/translated-09/0032.jpg"), cb: 36, header: false, ct: 3)
 
-#slide2x([33], image("../public/merged-09/0033.jpg"), image("../public/translated-09/0033.jpg"))
+#slide2x([33], image("../public/merged-09/0033.jpg"), image("../public/translated-09/0033.jpg"), cb: 8)
 
 #slide2x([34], image("../public/merged-09/0034.jpg"), image("../public/translated-09/0034.jpg"), header: false)
 
-#slide2x([35], image("../public/merged-09/0035.jpg"), image("../public/translated-09/0035.jpg"), header: false)
+#slide2x([35], image("../public/merged-09/0035.jpg"), image("../public/translated-09/0035.jpg"), header: false, ct: 4, cb: 8)
 
-#slide2x([36], image("../public/merged-09/0036.jpg"), image("../public/translated-09/0036.jpg"), header: false)
+#slide2x([36], image("../public/merged-09/0036.jpg"), image("../public/translated-09/0036.jpg"), header: false, ct: 3, cb: 6)
 
-#slide2x([37], image("../public/merged-09/0037.jpg"), image("../public/translated-09/0037.jpg"), header: false)
+#slide2x([37], image("../public/merged-09/0037.jpg"), image("../public/translated-09/0037.jpg"), header: false, ct: 12, cb: 15)
 
 #slide2x([38], image("../public/merged-09/0038.jpg"), image("../public/translated-09/0038.jpg"), cb: 0.08)
 
+= H.261
+
 #slide2x([40], image("../public/merged-09/0040.jpg"), image("../public/translated-09/0040.jpg"))
 
-#slide2x([41], image("../public/merged-09/0041.jpg"), image("../public/translated-09/0041.jpg"), header: false, cb: 0.15)
+#slide2x([41], image("../public/merged-09/0041.jpg"), image("../public/translated-09/0041.jpg"), header: false, cb: 19, ct: 7)
 
-#slide2x([42], image("../public/merged-09/0042.jpg"), image("../public/translated-09/0042.jpg"), header: false, cb: 0.12)
+#slide2x([42], image("../public/merged-09/0042.jpg"), image("../public/translated-09/0042.jpg"), header: false, cb: 14, ct: 5)
 
 #slide2x([43], image("../public/merged-09/0043.jpg"), image("../public/translated-09/0043.jpg"), header: false)
 
-#slide2x([44], image("../public/merged-09/0044.jpg"), image("../public/translated-09/0044.jpg"))
+#slide2x([44], image("../public/merged-09/0044.jpg"), image("../public/translated-09/0044.jpg"), cb: 7)
 
 #slide2x([45], image("../public/merged-09/0045.jpg"), image("../public/translated-09/0045.jpg"))
 
-#slide2x([46], image("../public/merged-09/0046.jpg"), image("../public/translated-09/0046.jpg"), header: false)
+#slide2x([46], image("../public/merged-09/0046.jpg"), image("../public/translated-09/0046.jpg"), header: false, cb: 5)
 
 #slide2x([47], image("../public/merged-09/0047.jpg"), image("../public/translated-09/0047.jpg"))
 
@@ -111,38 +125,40 @@
 
 #slide2x([49], image("../public/merged-09/0049.jpg"), image("../public/translated-09/0049.jpg"), header: false)
 
-#slide2x([50], image("../public/merged-09/0050.jpg"), image("../public/translated-09/0050.jpg"))
+#slide2x([50], image("../public/merged-09/0050.jpg"), image("../public/translated-09/0050.jpg"), cb: 3)
 
-#slide2x([51], image("../public/merged-09/0051.jpg"), image("../public/translated-09/0051.jpg"), header: false)
+#slide2x([51], image("../public/merged-09/0051.jpg"), image("../public/translated-09/0051.jpg"), header: false, cb: 2)
 
-#slide2x([52], image("../public/merged-09/0052.jpg"), image("../public/translated-09/0052.jpg"), header: false, cb: 0.34)
+#slide2x([52], image("../public/merged-09/0052.jpg"), image("../public/translated-09/0052.jpg"), header: false, cb: 38, ct: 3)
 
-#slide2x([53], image("../public/merged-09/0053.jpg"), image("../public/translated-09/0053.jpg"), header: false, cb: 0.06)
+#slide2x([53], image("../public/merged-09/0053.jpg"), image("../public/translated-09/0053.jpg"), header: false, cb: 9, ct: 2)
 
-#slide2x([54], image("../public/merged-09/0054.jpg"), image("../public/translated-09/0054.jpg"), crop: 0.62, header: false)
+#slide2x([54], image("../public/merged-09/0054.jpg"), image("../public/translated-09/0054.jpg"), cb: 40, header: false, ct: 2)
 
-#slide2x([55], image("../public/merged-09/0055.jpg"), image("../public/translated-09/0055.jpg"), header: false, cb: 0.13)
+#slide2x([55], image("../public/merged-09/0055.jpg"), image("../public/translated-09/0055.jpg"), header: false, cb: 15, ct: 2)
 
-#slide2x([56], image("../public/merged-09/0056.jpg"), image("../public/translated-09/0056.jpg"), crop: 0.8, header: false)
+#slide2x([56], image("../public/merged-09/0056.jpg"), image("../public/translated-09/0056.jpg"), cb: 27, ct: 5, header: false)
 
-#slide2x([58], image("../public/merged-09/0058.jpg"), image("../public/translated-09/0058.jpg"))
+= H.263
 
-#slide2x([59], image("../public/merged-09/0059.jpg"), image("../public/translated-09/0059.jpg"), cb: 0.15)
+#slide2x([58], image("../public/merged-09/0058.jpg"), image("../public/translated-09/0058.jpg"), cb: 3)
 
-#slide2x([60], image("../public/merged-09/0060.jpg"), image("../public/translated-09/0060.jpg"), header: false)
+#slide2x([59], image("../public/merged-09/0059.jpg"), image("../public/translated-09/0059.jpg"), cb: 15)
 
-#slide2x([61], image("../public/merged-09/0061.jpg"), image("../public/translated-09/0061.jpg"))
+#slide2x([60], image("../public/merged-09/0060.jpg"), image("../public/translated-09/0060.jpg"), header: false, cb: 4)
+
+#slide2x([61], image("../public/merged-09/0061.jpg"), image("../public/translated-09/0061.jpg"), cb: 6)
 
 #slide2x([62], image("../public/merged-09/0062.jpg"), image("../public/translated-09/0062.jpg"), header: false)
 
 #slide2x([63], image("../public/merged-09/0063.jpg"), image("../public/translated-09/0063.jpg"), header: false)
 
-#slide2x([64], image("../public/merged-09/0064.jpg"), image("../public/translated-09/0064.jpg"), crop: 0.6)
+#slide2x([64], image("../public/merged-09/0064.jpg"), image("../public/translated-09/0064.jpg"), cb: 43)
 
 #slide2x([65], image("../public/merged-09/0065.jpg"), image("../public/translated-09/0065.jpg"), header: false)
 
 #slide2x([66], image("../public/merged-09/0066.jpg"), image("../public/translated-09/0066.jpg"), header: false)
 
-#slide2x([67], image("../public/merged-09/0067.jpg"), image("../public/translated-09/0067.jpg"), header: false)
+#slide2x([67], image("../public/merged-09/0067.jpg"), image("../public/translated-09/0067.jpg"), header: false, ct: 2)
 
 #slide2x([68], image("../public/merged-09/0068.jpg"), image("../public/translated-09/0068.jpg"), cb: 0.11)
