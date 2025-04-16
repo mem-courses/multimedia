@@ -352,10 +352,18 @@
       crop-bottom += 1 - crop
     }
     if ct != none {
-      crop-top += ct
+      if ct >= 1 {
+        crop-top += ct / 100.
+      } else {
+        crop-top += ct
+      }
     }
     if cb != none {
-      crop-bottom += cb
+      if cb >= 1 {
+        crop-bottom += cb / 100.
+      } else {
+        crop-bottom += cb
+      }
     }
 
     set image(width: 100%)
