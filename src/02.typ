@@ -16,7 +16,7 @@
     ),
   ),
   semester: "Spring-Summer 2025",
-  date: "March 27, 2025",
+  date: "February 21, 2025",
   page-margin: (left: 16mm, right: 16mm, top: 12mm, bottom: 12mm),
 )
 
