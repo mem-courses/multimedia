@@ -67,13 +67,13 @@
 	))$。
 ]
 
-#slide2x([12], image("../public/merged-03/0012.jpg"), image("../public/translated-03/0012.jpg"), header: false)
+#slide2x([12], image("../public/merged-03/0012.jpg"), image("../public/translated-03/0012.jpg"), header: false, ct: 4, cb: 2)
 
-#slide2x([13], image("../public/merged-03/0013.jpg"), image("../public/translated-03/0013.jpg"), header: false, ct: 0.02)
+#slide2x([13], image("../public/merged-03/0013.jpg"), image("../public/translated-03/0013.jpg"), header: false, ct: 4, cb: 1)
 
 - *光谱反射率函数(surface spectral reflectance function)*：物体表面在每个波长上的反射率，用 $S(lambda)$ 表示。
 
-#slide2x([14], image("../public/merged-03/0014.jpg"), image("../public/translated-03/0014.jpg"), header: false, cb: 0.07)
+#slide2x([14], image("../public/merged-03/0014.jpg"), image("../public/translated-03/0014.jpg"), header: false, cb: 8, ct: 3)
 
 #note[
   *场景：人看物体*。
@@ -88,16 +88,16 @@
   $
 ]
 
-#slide2x([15], image("../public/merged-03/0015.jpg"), image("../public/translated-03/0015.jpg"), crop: 0.8, header: false)
+#slide2x([15], image("../public/merged-03/0015.jpg"), image("../public/translated-03/0015.jpg"), crop: 0.8, header: false, ct: 3, cb: 2)
 
 #topic("伽马校正", blue)[
-  #slide2x([16], image("../public/merged-03/0016.jpg"), image("../public/translated-03/0016.jpg"))
+  #slide2x([16], image("../public/merged-03/0016.jpg"), image("../public/translated-03/0016.jpg"), cb: 3)
 
-  #slide2x([17], image("../public/merged-03/0017.jpg"), image("../public/translated-03/0017.jpg"), header: false, cb: 0.06, ct: 0.02)
+  #slide2x([17], image("../public/merged-03/0017.jpg"), image("../public/translated-03/0017.jpg"), header: false, cb: 7, ct: 5)
 
   - *Gamma 矫正* 的动机：*阴极射线管(CRT)* 输出的光线强度与驱动电压非线性关系，而是与电压 $R$ 的 $gamma$ 次方成正比：$important(L prop R^gamma)$。
 
-  #slide2x([18], image("../public/merged-03/0018.jpg"), image("../public/translated-03/0018.jpg"), header: false, cb: 0.05)
+  #slide2x([18], image("../public/merged-03/0018.jpg"), image("../public/translated-03/0018.jpg"), header: false, cb: 8, ct: 4)
 
   - *Gamma 矫正* 的方法：在把电压信号送给 CRT 之前，先对其取 $1"/"gamma$ 次方以进行校正：$important(R'=R^(1"/"gamma))$
 
@@ -111,43 +111,50 @@
 
   #slide2x([22], image("../public/merged-03/0022.jpg"), image("../public/translated-03/0022.jpg"), header: false)
 
-	- 不计算指数函数——使用分段线性函数进行近似。这是一种方法：
-	#no-par-margin
-	$
-		R'_"SMPTE" = display(cases(
+  - 不计算指数函数——使用分段线性函数进行近似。这是一种方法：
+  #no-par-margin
+  $
+    R'_"SMPTE" = display(cases(
 			0\,&quad R < 0.018,
 			(1.099 R)^(0.45) - 0.099\,&quad R >= 0.018
 		))
-	$
+  $
 ]
 
-#slide2x([23], image("../public/merged-03/0023.jpg"), image("../public/translated-03/0023.jpg"))
+#slide2x([23], image("../public/merged-03/0023.jpg"), image("../public/translated-03/0023.jpg"), cb: 5)
 
-#slide2x([24], image("../public/merged-03/0024.jpg"), image("../public/translated-03/0024.jpg"), header: false)
+#slide2x([24], image("../public/merged-03/0024.jpg"), image("../public/translated-03/0024.jpg"), header: false, ct: 2)
+
+- *色度计实验(colorimeter experiment)*：一个理想实验，测量颜色是怎么通过三原色混合得来的。
+  - 科学家发现自然界的部分颜色无法通过这种方法调出来——e.g. 可以通过讲上面的红灯移下来调色，这样计红光的强度为负值。
 
 #slide2x([25], image("../public/merged-03/0025.jpg"), image("../public/translated-03/0025.jpg"), header: false)
 
-#slide2x([26], image("../public/merged-03/0026.jpg"), image("../public/translated-03/0026.jpg"), header: false, cb: 0.1, ct: 0.02)
+#slide2x([26], image("../public/merged-03/0026.jpg"), image("../public/translated-03/0026.jpg"), header: false, cb: 0.1, ct: 4)
 
-#slide2x([27], image("../public/merged-03/0027.jpg"), image("../public/translated-03/0027.jpg"), crop: 0.95, header: false)
+#slide2x([27], image("../public/merged-03/0027.jpg"), image("../public/translated-03/0027.jpg"), header: false, ct: 3, cb: 8)
 
-#slide2x([28], image("../public/merged-03/0028.jpg"), image("../public/translated-03/0028.jpg"), header: false, cb: 0.03)
+#slide2x([28], image("../public/merged-03/0028.jpg"), image("../public/translated-03/0028.jpg"), header: false, cb: 5, ct: 2)
 
-#slide2x([29], image("../public/merged-03/0029.jpg"), image("../public/translated-03/0029.jpg"), header: false)
+#slide2x([29], image("../public/merged-03/0029.jpg"), image("../public/translated-03/0029.jpg"), header: false, ct: 4, cb: 3)
 
-#slide2x([30], image("../public/merged-03/0030.jpg"), image("../public/translated-03/0030.jpg"), header: false, ct: 0.15)
+#slide2x([30], image("../public/merged-03/0030.jpg"), image("../public/translated-03/0030.jpg"), header: false, ct: 18, cb: 3)
 
-#slide2x([31], image("../public/merged-03/0031.jpg"), image("../public/translated-03/0031.jpg"), header: false, ct: 0.15)
+#slide2x([31], image("../public/merged-03/0031.jpg"), image("../public/translated-03/0031.jpg"), header: false, ct: 18, cb: 3)
 
 #slide2x([32], image("../public/merged-03/0032.jpg"), image("../public/translated-03/0032.jpg"), cb: 0.056)
 
-#slide2x([33], image("../public/merged-03/0033.jpg"), image("../public/translated-03/0033.jpg"), cb: 0.05)
+#slide2x([33], image("../public/merged-03/0033.jpg"), image("../public/translated-03/0033.jpg"), cb: 8)
 
-#slide2x([34], image("../public/merged-03/0034.jpg"), image("../public/translated-03/0034.jpg"), crop: 0.9, header: false)
+- *韦伯定律(Weber's Law)*：人对灰度的感知是相对的，而不是绝对的——符合对数关系。
 
-#slide2x([35], image("../public/merged-03/0035.jpg"), image("../public/translated-03/0035.jpg"), header: false, ct: 0.05, cb: 0.02)
+#slide2x([34], image("../public/merged-03/0034.jpg"), image("../public/translated-03/0034.jpg"), cb: 17, ct: 5, header: false)
 
-#slide2x([36], image("../public/merged-03/0036.jpg"), image("../public/translated-03/0036.jpg"), header: false, ct: 0.04)
+- CIELAB 颜色模型引入 $1"/"3$ 次幂来近似对数关系，对 luminance、colorfulness 和 hue 三维进行建模。
+
+#slide2x([35], image("../public/merged-03/0035.jpg"), image("../public/translated-03/0035.jpg"), header: false, ct: 8, cb: 5)
+
+#slide2x([36], image("../public/merged-03/0036.jpg"), image("../public/translated-03/0036.jpg"), header: false, ct: 7, cb: 3)
 
 #slide2x([37], image("../public/merged-03/0037.jpg"), image("../public/translated-03/0037.jpg"))
 
@@ -157,11 +164,11 @@
 
 #slide2x([40], image("../public/merged-03/0040.jpg"), image("../public/translated-03/0040.jpg"))
 
-#slide2x([41], image("../public/merged-03/0041.jpg"), image("../public/translated-03/0041.jpg"))
+#slide2x([41], image("../public/merged-03/0041.jpg"), image("../public/translated-03/0041.jpg"), cb: 3)
 
 #slide2x([42], image("../public/merged-03/0042.jpg"), image("../public/translated-03/0042.jpg"), crop: 0.9)
 
-#slide2x([43], image("../public/merged-03/0043.jpg"), image("../public/translated-03/0043.jpg"))
+#slide2x([43], image("../public/merged-03/0043.jpg"), image("../public/translated-03/0043.jpg"), cb: 3)
 
 #slide2x([44], image("../public/merged-03/0044.jpg"), image("../public/translated-03/0044.jpg"), crop: 0.5)
 
@@ -173,11 +180,11 @@
 
 #slide2x([48], image("../public/merged-03/0048.jpg"), image("../public/translated-03/0048.jpg"), header: false)
 
-#slide2x([49], image("../public/merged-03/0049.jpg"), image("../public/translated-03/0049.jpg"))
+#slide2x([49], image("../public/merged-03/0049.jpg"), image("../public/translated-03/0049.jpg"), cb: 8)
 
-#slide2x([50], image("../public/merged-03/0050.jpg"), image("../public/translated-03/0050.jpg"), header: false)
+#slide2x([50], image("../public/merged-03/0050.jpg"), image("../public/translated-03/0050.jpg"), header: false, ct: 3, cb: 2)
 
-#slide2x([51], image("../public/merged-03/0051.jpg"), image("../public/translated-03/0051.jpg"), header: false, ct: 0.09, cb: 0.08)
+#slide2x([51], image("../public/merged-03/0051.jpg"), image("../public/translated-03/0051.jpg"), header: false, ct: 11, cb: 9)
 
-#slide2x([52], image("../public/merged-03/0052.jpg"), image("../public/translated-03/0052.jpg"), cb: 0.07)
+#slide2x([52], image("../public/merged-03/0052.jpg"), image("../public/translated-03/0052.jpg"), cb: 8)
 
