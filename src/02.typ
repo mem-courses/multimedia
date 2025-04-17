@@ -126,7 +126,7 @@ $
 
 - #strong[8 位彩色图像(8-bit color image)] 也称为 #strong[256 色图像(256-colors image)];。
 
-#topic("颜色查找表(LUT)", green)[
+#topic("颜色查找表", green)[
   #slide2x([28], image("../public/merged-02/0028.jpg"), image("../public/translated-02/0028.jpg"), crop: 0.94)
 
   <bit-color-image-1>

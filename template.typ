@@ -339,7 +339,7 @@
   ct: none,
   cb: none,
 ) = {
-  let note-width = 1.2em
+  let note-width = 2em
 
   let slide1x(
     img,
@@ -403,17 +403,24 @@
       width: 100%,
       grid(
         columns: (note-width, 1fr, 1fr, note-width),
-        {
-          set align(left)
-          v(0.25em)
-          page
-        },
+        grid(
+          columns: (3fr, 1fr),
+          {
+            set align(right)
+            v(0.25em)
+            page
+          },
+        ),
         slide1x(img1), // left
         slide1x(img2), // right
-        {
-          set align(right)
-          context current-topic.get()
-        }
+        grid(
+          columns: (1fr, 3fr),
+          {},
+          {
+            set align(left)
+            context current-topic.get()
+          },
+        )
       ),
     )
     set text(fill: black)

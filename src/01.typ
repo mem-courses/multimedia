@@ -35,19 +35,19 @@
 
 #slide2x([6], image("../public/merged-01/0006.jpg"), image("../public/translated-01/0006.jpg"), h: false, ct: 6, cb: 4)
 
-#slide2x([7], image("../public/merged-01/0007.jpg"), image("../public/translated-01/0007.jpg"))
+#slide2x([7], image("../public/merged-01/0007.jpg"), image("../public/translated-01/0007.jpg"), cb: 11)
 
 #slide2x([8], image("../public/merged-01/0008.jpg"), image("../public/translated-01/0008.jpg"))
 
-#slide2x([9], image("../public/merged-01/0009.jpg"), image("../public/translated-01/0009.jpg"), h: false)
+#slide2x([9], image("../public/merged-01/0009.jpg"), image("../public/translated-01/0009.jpg"), h: false, ct: 3, cb: 5)
 
-#slide2x([10], image("../public/merged-01/0010.jpg"), image("../public/translated-01/0010.jpg"), h: false, cb: 0.1)
+#slide2x([10], image("../public/merged-01/0010.jpg"), image("../public/translated-01/0010.jpg"), h: false, ct: 3, cb: 15)
 
-#slide2x([11], image("../public/merged-01/0011.jpg"), image("../public/translated-01/0011.jpg"), cb: 0.08)
+#slide2x([11], image("../public/merged-01/0011.jpg"), image("../public/translated-01/0011.jpg"), cb: 10)
 
-#slide2x([12], image("../public/merged-01/0012.jpg"), image("../public/translated-01/0012.jpg"), header: false)
+#slide2x([12], image("../public/merged-01/0012.jpg"), image("../public/translated-01/0012.jpg"), header: false, ct: 3, cb: 5)
 
-#slide2x([13], image("../public/merged-01/0013.jpg"), image("../public/translated-01/0013.jpg"), h: false)
+#slide2x([13], image("../public/merged-01/0013.jpg"), image("../public/translated-01/0013.jpg"), h: false, ct: 3, cb: 6)
 
 #slide2x([14], image("../public/merged-01/0014.jpg"), image("../public/translated-01/0014.jpg"), h: false, cb: 0.07, ct: 0.04)
 
@@ -61,7 +61,7 @@
 
 = History of Multimedia | 多媒体的历史
 
-#slide2x([19], image("../public/merged-01/0019.jpg"), image("../public/translated-01/0019.jpg"))
+#slide2x([19], image("../public/merged-01/0019.jpg"), image("../public/translated-01/0019.jpg"), cb: 9)
 
 #slide2x([20], image("../public/merged-01/0020.jpg"), image("../public/translated-01/0020.jpg"), h: false, cb: 0.17)
 
@@ -69,7 +69,7 @@
 
 #slide2x([22], image("../public/merged-01/0022.jpg"), image("../public/translated-01/0022.jpg"), h: false, cb: 0.04)
 
-#slide2x([23], image("../public/merged-01/0023.jpg"), image("../public/translated-01/0023.jpg"))
+#slide2x([23], image("../public/merged-01/0023.jpg"), image("../public/translated-01/0023.jpg"), cb: 5)
 
 #slide2x([24], image("../public/merged-01/0024.jpg"), image("../public/translated-01/0024.jpg"), h: false, crop: 0.78)
 
