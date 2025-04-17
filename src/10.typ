@@ -26,8 +26,6 @@
 
 #slide2x([2], image("../public/merged-10/0002.jpg"), image("../public/translated-10/0002.jpg"), cb: 19)
 
-#slide2x([3], image("../public/merged-10/0003.jpg"), image("../public/translated-10/0003.jpg"), cb: 16)
-
 = MPEG-1
 
 #slide2x([5], image("../public/merged-10/0005.jpg"), image("../public/translated-10/0005.jpg"), cb: 4)
@@ -36,9 +34,9 @@
 
 #slide2x([6], image("../public/merged-10/0006.jpg"), image("../public/translated-10/0006.jpg"), cb: 3)
 
-#slide2x([7], image("../public/merged-10/0007.jpg"), image("../public/translated-10/0007.jpg"), header: false, ct: 2, cb: 5)
+#slide2x([7], image("../public/merged-10/0007.jpg"), image("../public/translated-10/0007.jpg"), header: false, ct: 3, cb: 6)
 
-- *双向搜索(bidirectional search)*：允许从下一帧中进行运动矢量搜索。允许双向搜索的帧称为 *B 帧(B-frame)*。
+- MPEG-1 允许 *双向搜索(bidirectional search)*：允许从下一帧中进行运动矢量搜索。允许双向搜索的帧称为 *B 帧(B-frame)*。
   - B 帧需要依赖后面的 #mark[I 帧或 P 帧]，因此#mark[帧的编码顺序与显示顺序并不相同]。
 
 #no-par-margin
@@ -46,7 +44,7 @@
 
 #slide2x([8], image("../public/merged-10/0008.jpg"), image("../public/translated-10/0008.jpg"), header: false, ct: 2, cb: 1)
 
-#slide2x([9], image("../public/merged-10/0009.jpg"), image("../public/translated-10/0009.jpg"), header: false, cb: 6)
+#slide2x([9], image("../public/merged-10/0009.jpg"), image("../public/translated-10/0009.jpg"), header: false, cb: 6, ct: 2)
 
 #slide2x([10], image("../public/merged-10/0010.jpg"), image("../public/translated-10/0010.jpg"), header: false, cb: 4)
 
@@ -79,121 +77,164 @@
 
 = MPEG-2
 
-#slide2x([23], image("../public/merged-10/0023.jpg"), image("../public/translated-10/0023.jpg"), crop: 0.92)
+#slide2x([23], image("../public/merged-10/0023.jpg"), image("../public/translated-10/0023.jpg"), cb: 10)
 
-#slide2x([24], image("../public/merged-10/0024.jpg"), image("../public/translated-10/0024.jpg"), header: false)
+#slide2x([24], image("../public/merged-10/0024.jpg"), image("../public/translated-10/0024.jpg"), header: false, ct: 2, cb: 2)
 
-#slide2x([25], image("../public/merged-10/0025.jpg"), image("../public/translated-10/0025.jpg"))
+#slide2x([25], image("../public/merged-10/0025.jpg"), image("../public/translated-10/0025.jpg"), cb: 2)
+
+- MPEG-2 支持隔行扫描的视频。将每个帧的两个场分别作为帧进行编码。
+
+#no-par-margin
+#align(center, figure(image("images/2025-04-17-14-59-16.png", width: 48%), caption: "Field prediction for field-pictures"))
 
 #slide2x([26], image("../public/merged-10/0026.jpg"), image("../public/translated-10/0026.jpg"), header: false)
 
-#slide2x([27], image("../public/merged-10/0027.jpg"), image("../public/translated-10/0027.jpg"), crop: 0.91, header: false)
+#slide2x([27], image("../public/merged-10/0027.jpg"), image("../public/translated-10/0027.jpg"), cb: 10, ct: 2, header: false)
 
-#slide2x([28], image("../public/merged-10/0028.jpg"), image("../public/translated-10/0028.jpg"), crop: 0.92, header: false)
+- MPEG-2 的五种不同的场图像的预测方式。
 
-#slide2x([29], image("../public/merged-10/0029.jpg"), image("../public/translated-10/0029.jpg"), header: false)
+#slide2x([29], image("../public/merged-10/0029.jpg"), image("../public/translated-10/0029.jpg"), header: false, ct: 1)
 
 #slide2x([30], image("../public/merged-10/0030.jpg"), image("../public/translated-10/0030.jpg"))
 
-#slide2x([31], image("../public/merged-10/0031.jpg"), image("../public/translated-10/0031.jpg"))
+#topic("可伸缩编码", blue)[
+  #slide2x([31], image("../public/merged-10/0031.jpg"), image("../public/translated-10/0031.jpg"))
 
-#slide2x([32], image("../public/merged-10/0032.jpg"), image("../public/translated-10/0032.jpg"), header: false)
+  #slide2x([32], image("../public/merged-10/0032.jpg"), image("../public/translated-10/0032.jpg"), header: false, cb: 3)
 
-#slide2x([33], image("../public/merged-10/0033.jpg"), image("../public/translated-10/0033.jpg"), header: false)
+  #slide2x([33], image("../public/merged-10/0033.jpg"), image("../public/translated-10/0033.jpg"), header: false, ct: 2, cb: 5)
 
-#slide2x([34], image("../public/merged-10/0034.jpg"), image("../public/translated-10/0034.jpg"), crop: 0.92, header: false)
+  - MPEG-2 的 *可伸缩编码(scalable coding)*（也称为 *分层编码(layered coding)*）：允许终端只解码部分层以得到不同质量的视频数据。
+    - *基础层(base layer)* 可以独立的进行编码、传输和解码，以获得基本的视频质量；*增强层(enhancement layer)* 的编码和解码依赖于前一个增强层，提供更高的视频质量。解码时可以选择只解码基础层与若干个增强层。
+    - MPEG-2 支持五种可伸缩编码，将在下面依次介绍。
 
-#slide2x([35], image("../public/merged-10/0035.jpg"), image("../public/translated-10/0035.jpg"), header: false)
+  #slide2x([34], image("../public/merged-10/0034.jpg"), image("../public/translated-10/0034.jpg"), header: false, cb: 12, ct: 2)
 
-#slide2x([36], image("../public/merged-10/0036.jpg"), image("../public/translated-10/0036.jpg"), header: false)
+  #slide2x([35], image("../public/merged-10/0035.jpg"), image("../public/translated-10/0035.jpg"), header: false, ct: 2, cb: 6)
 
-#slide2x([37], image("../public/merged-10/0037.jpg"), image("../public/translated-10/0037.jpg"), header: false)
+  - 基于 *信噪比可伸缩性(SNR scalability)* 的编码
+    - 在基础层使用较粗的量化（使用较大的量化步长）。
+    - 对于在基础层中因为较粗量化而损失掉的细节，在增强层进行更细的量化（使用更小的量化步长）。
 
-#slide2x([38], image("../public/merged-10/0038.jpg"), image("../public/translated-10/0038.jpg"), header: false)
+  #no-par-margin
+  #table(
+    columns: (1fr, 1fr),
+    table.header(
+      [*Encoder*],
+      [*Decoder*],
+    ),
 
-#slide2x([39], image("../public/merged-10/0039.jpg"), image("../public/translated-10/0039.jpg"), header: false)
+    align(center, image("images/2025-04-17-15-04-45.png", width: 100%)), align(center, image("images/2025-04-17-15-04-51.png", width: 100%)),
+  )
 
-#slide2x([40], image("../public/merged-10/0040.jpg"), image("../public/translated-10/0040.jpg"), header: false)
+  #slide2x([38], image("../public/merged-10/0038.jpg"), image("../public/translated-10/0038.jpg"), header: false)
 
-#slide2x([41], image("../public/merged-10/0041.jpg"), image("../public/translated-10/0041.jpg"), header: false)
+  - 基于 *空间可伸缩性(spatial scalability)* 的编码
+    - 基础层使用下采样的图像进行编码（较低分辨率）。
+    - 增强层使用与基础层放大后的差分图像进行编码（逐渐得到较高分辨率）。
 
-#slide2x([42], image("../public/merged-10/0042.jpg"), image("../public/translated-10/0042.jpg"), header: false)
+  #no-par-margin
+  #align(center, image("images/2025-04-17-15-12-43.png", width: 40%))
 
-#slide2x([43], image("../public/merged-10/0043.jpg"), image("../public/translated-10/0043.jpg"), crop: 0.85, header: false)
+  #slide2x([40], image("../public/merged-10/0040.jpg"), image("../public/translated-10/0040.jpg"), header: false, ct: 2, cb: 10)
 
-#slide2x([44], image("../public/merged-10/0044.jpg"), image("../public/translated-10/0044.jpg"), header: false)
+  - 基于 *时间可伸缩性(temporal scalability)* 的编码
+    - 基础层使用低帧率的视频流。e.g. $F_0,F_2,F_4,dots.c$
+    - 增强层补充缺少的帧。e.g. $F_1,F_3,F_5,dots.c$
 
-#slide2x([45], image("../public/merged-10/0045.jpg"), image("../public/translated-10/0045.jpg"), header: false)
+  #no-par-margin
+  #align(center, image("images/2025-04-17-15-18-59.png", width: 40%))
 
-#slide2x([46], image("../public/merged-10/0046.jpg"), image("../public/translated-10/0046.jpg"), header: false)
+  #slide2x([42], image("../public/merged-10/0042.jpg"), image("../public/translated-10/0042.jpg"), header: false, cb: 4)
 
-#slide2x([47], image("../public/merged-10/0047.jpg"), image("../public/translated-10/0047.jpg"))
+  #slide2x([43], image("../public/merged-10/0043.jpg"), image("../public/translated-10/0043.jpg"), cb: 17, ct: 2, header: false)
 
-#slide2x([48], image("../public/merged-10/0048.jpg"), image("../public/translated-10/0048.jpg"), crop: 0.94, header: false)
+  - 基于 *混合可伸缩性(hybrid scalability)* 的编码：前面的三种可伸缩编码可以混合使用。
+
+  #slide2x([44], image("../public/merged-10/0044.jpg"), image("../public/translated-10/0044.jpg"), header: false, cb: 7, ct: 2)
+
+  #slide2x([45], image("../public/merged-10/0045.jpg"), image("../public/translated-10/0045.jpg"), header: false, ct: 3, cb: 3)
+
+  #slide2x([46], image("../public/merged-10/0046.jpg"), image("../public/translated-10/0046.jpg"), header: false, ct: 2, cb: 3)
+
+  - 基于 *数据分割可伸缩性(data partitioning scalability)* 的编码：基础层包括低频 DCT 信号，增强层包括高频 DCT 信号。
+]
+
+#slide2x([47], image("../public/merged-10/0047.jpg"), image("../public/translated-10/0047.jpg"), cb: 6)
+
+- MPEG-2 支持更多的颜色下采样的模式，包括 4:2:2 和 4:4:4。
+
+#slide2x([48], image("../public/merged-10/0048.jpg"), image("../public/translated-10/0048.jpg"), crop: 0.94, header: false, ct: 2, cb: 3)
+
+- MPEG-2 支持非线性的量化。
+- MPEG-2 限制单个 scale 不能跨行。
 
 = MPEG-4
 
 #slide2x([4], image("../public/merged-11/0004.jpg"), image("../public/translated-11/0004.jpg"))
 
-#slide2x([5], image("../public/merged-11/0005.jpg"), image("../public/translated-11/0005.jpg"))
+- MPEG-4 最主要的贡献在于引入了 *基于对象的编码(object-based coding)*，包括多种形式。
 
-#slide2x([6], image("../public/merged-11/0006.jpg"), image("../public/translated-11/0006.jpg"), cb: 0.01)
+#slide2x([5], image("../public/merged-11/0005.jpg"), image("../public/translated-11/0005.jpg"), h: false, ct: 2, cb: 2)
 
-#slide2x([7], image("../public/merged-11/0007.jpg"), image("../public/translated-11/0007.jpg"), cb: 0.10)
+#slide2x([6], image("../public/merged-11/0006.jpg"), image("../public/translated-11/0006.jpg"), cb: 4, h: false, ct: 7)
 
-#slide2x([8], image("../public/merged-11/0008.jpg"), image("../public/translated-11/0008.jpg"))
+#slide2x([7], image("../public/merged-11/0007.jpg"), image("../public/translated-11/0007.jpg"), cb: 14, ct: 3, h: false)
 
-#slide2x([9], image("../public/merged-11/0009.jpg"), image("../public/translated-11/0009.jpg"))
+#slide2x([8], image("../public/merged-11/0008.jpg"), image("../public/translated-11/0008.jpg"), h: false, ct: 1, cb: 1)
 
-#slide2x([10], image("../public/merged-11/0010.jpg"), image("../public/translated-11/0010.jpg"))
+#slide2x([9], image("../public/merged-11/0009.jpg"), image("../public/translated-11/0009.jpg"), h: false, ct: 1, cb: 1)
 
-#slide2x([11], image("../public/merged-11/0011.jpg"), image("../public/translated-11/0011.jpg"), cb: 0.01)
+#slide2x([10], image("../public/merged-11/0010.jpg"), image("../public/translated-11/0010.jpg"), h: false, ct: 3)
 
-#slide2x([12], image("../public/merged-11/0012.jpg"), image("../public/translated-11/0012.jpg"), cb: 0.24)
+#slide2x([11], image("../public/merged-11/0011.jpg"), image("../public/translated-11/0011.jpg"), cb: 4, h: false)
 
-#slide2x([13], image("../public/merged-11/0013.jpg"), image("../public/translated-11/0013.jpg"))
+#slide2x([12], image("../public/merged-11/0012.jpg"), image("../public/translated-11/0012.jpg"), cb: 28)
 
-#slide2x([14], image("../public/merged-11/0014.jpg"), image("../public/translated-11/0014.jpg"), cb: 0.19)
+#slide2x([13], image("../public/merged-11/0013.jpg"), image("../public/translated-11/0013.jpg"), cb: 3)
 
-#slide2x([15], image("../public/merged-11/0015.jpg"), image("../public/translated-11/0015.jpg"), cb: 0.15)
+#slide2x([14], image("../public/merged-11/0014.jpg"), image("../public/translated-11/0014.jpg"), cb: 23, ct: 2, h: false)
+
+#slide2x([15], image("../public/merged-11/0015.jpg"), image("../public/translated-11/0015.jpg"), cb: 18, ct: 2, h: false)
 
 #slide2x([16], image("../public/merged-11/0016.jpg"), image("../public/translated-11/0016.jpg"), cb: 0.01)
 
 #slide2x([17], image("../public/merged-11/0017.jpg"), image("../public/translated-11/0017.jpg"), cb: 0.07)
 
-#slide2x([18], image("../public/merged-11/0018.jpg"), image("../public/translated-11/0018.jpg"), cb: 0.03)
+#slide2x([18], image("../public/merged-11/0018.jpg"), image("../public/translated-11/0018.jpg"), cb: 0.03, h: false)
 
-#slide2x([19], image("../public/merged-11/0019.jpg"), image("../public/translated-11/0019.jpg"))
+#slide2x([19], image("../public/merged-11/0019.jpg"), image("../public/translated-11/0019.jpg"), h: false)
 
-#slide2x([20], image("../public/merged-11/0020.jpg"), image("../public/translated-11/0020.jpg"), cb: 0.12)
+#slide2x([20], image("../public/merged-11/0020.jpg"), image("../public/translated-11/0020.jpg"), cb: 0.12, h: false)
 
-#slide2x([21], image("../public/merged-11/0021.jpg"), image("../public/translated-11/0021.jpg"), cb: 0.16)
+#slide2x([21], image("../public/merged-11/0021.jpg"), image("../public/translated-11/0021.jpg"), cb: 0.16, h: false)
 
-#slide2x([22], image("../public/merged-11/0022.jpg"), image("../public/translated-11/0022.jpg"), cb: 0.03)
+#slide2x([22], image("../public/merged-11/0022.jpg"), image("../public/translated-11/0022.jpg"), cb: 0.03, h: false)
 
-#slide2x([23], image("../public/merged-11/0023.jpg"), image("../public/translated-11/0023.jpg"), cb: 0.01)
+#slide2x([23], image("../public/merged-11/0023.jpg"), image("../public/translated-11/0023.jpg"), cb: 0.01, h: false)
 
-#slide2x([24], image("../public/merged-11/0024.jpg"), image("../public/translated-11/0024.jpg"))
+#slide2x([24], image("../public/merged-11/0024.jpg"), image("../public/translated-11/0024.jpg"), h: false)
 
-#slide2x([25], image("../public/merged-11/0025.jpg"), image("../public/translated-11/0025.jpg"))
+#slide2x([25], image("../public/merged-11/0025.jpg"), image("../public/translated-11/0025.jpg"), h: false)
 
 #slide2x([26], image("../public/merged-11/0026.jpg"), image("../public/translated-11/0026.jpg"), cb: 0.01)
 
-#slide2x([27], image("../public/merged-11/0027.jpg"), image("../public/translated-11/0027.jpg"))
+#slide2x([27], image("../public/merged-11/0027.jpg"), image("../public/translated-11/0027.jpg"), h: false)
 
-#slide2x([28], image("../public/merged-11/0028.jpg"), image("../public/translated-11/0028.jpg"))
+#slide2x([28], image("../public/merged-11/0028.jpg"), image("../public/translated-11/0028.jpg"), h: false)
 
 #slide2x([29], image("../public/merged-11/0029.jpg"), image("../public/translated-11/0029.jpg"))
 
-#slide2x([30], image("../public/merged-11/0030.jpg"), image("../public/translated-11/0030.jpg"), cb: 0.04)
+#slide2x([30], image("../public/merged-11/0030.jpg"), image("../public/translated-11/0030.jpg"), cb: 0.04, h: false)
 
-#slide2x([31], image("../public/merged-11/0031.jpg"), image("../public/translated-11/0031.jpg"), cb: 0.01)
+#slide2x([31], image("../public/merged-11/0031.jpg"), image("../public/translated-11/0031.jpg"), cb: 0.01, h: false)
 
-#slide2x([32], image("../public/merged-11/0032.jpg"), image("../public/translated-11/0032.jpg"), cb: 0.03)
+#slide2x([32], image("../public/merged-11/0032.jpg"), image("../public/translated-11/0032.jpg"), cb: 0.03, h: false)
 
 #slide2x([33], image("../public/merged-11/0033.jpg"), image("../public/translated-11/0033.jpg"), cb: 0.01)
 
-#slide2x([34], image("../public/merged-11/0034.jpg"), image("../public/translated-11/0034.jpg"))
+#slide2x([34], image("../public/merged-11/0034.jpg"), image("../public/translated-11/0034.jpg"), h: false)
 
 #slide2x([35], image("../public/merged-11/0035.jpg"), image("../public/translated-11/0035.jpg"), cb: 0.05)
 
@@ -201,48 +242,48 @@
 
 #slide2x([37], image("../public/merged-11/0037.jpg"), image("../public/translated-11/0037.jpg"))
 
-#slide2x([38], image("../public/merged-11/0038.jpg"), image("../public/translated-11/0038.jpg"), cb: 0.15)
+#slide2x([38], image("../public/merged-11/0038.jpg"), image("../public/translated-11/0038.jpg"), cb: 0.15, h: false)
 
-#slide2x([39], image("../public/merged-11/0039.jpg"), image("../public/translated-11/0039.jpg"), cb: 0.10)
+#slide2x([39], image("../public/merged-11/0039.jpg"), image("../public/translated-11/0039.jpg"), cb: 0.10, h: false)
 
-#slide2x([40], image("../public/merged-11/0040.jpg"), image("../public/translated-11/0040.jpg"))
+#slide2x([40], image("../public/merged-11/0040.jpg"), image("../public/translated-11/0040.jpg"), h: false)
 
-#slide2x([41], image("../public/merged-11/0041.jpg"), image("../public/translated-11/0041.jpg"), cb: 0.03)
+#slide2x([41], image("../public/merged-11/0041.jpg"), image("../public/translated-11/0041.jpg"), cb: 0.03, h: false)
 
-#slide2x([42], image("../public/merged-11/0042.jpg"), image("../public/translated-11/0042.jpg"))
+#slide2x([42], image("../public/merged-11/0042.jpg"), image("../public/translated-11/0042.jpg"), h: false)
 
-#slide2x([43], image("../public/merged-11/0043.jpg"), image("../public/translated-11/0043.jpg"))
+#slide2x([43], image("../public/merged-11/0043.jpg"), image("../public/translated-11/0043.jpg"), h: false)
 
-#slide2x([44], image("../public/merged-11/0044.jpg"), image("../public/translated-11/0044.jpg"), cb: 0.01)
+#slide2x([44], image("../public/merged-11/0044.jpg"), image("../public/translated-11/0044.jpg"), cb: 0.01, h: false)
 
-#slide2x([45], image("../public/merged-11/0045.jpg"), image("../public/translated-11/0045.jpg"), cb: 0.01)
+#slide2x([45], image("../public/merged-11/0045.jpg"), image("../public/translated-11/0045.jpg"), cb: 0.01, h: false)
 
-#slide2x([46], image("../public/merged-11/0046.jpg"), image("../public/translated-11/0046.jpg"))
+#slide2x([46], image("../public/merged-11/0046.jpg"), image("../public/translated-11/0046.jpg"), h: false)
 
-#slide2x([47], image("../public/merged-11/0047.jpg"), image("../public/translated-11/0047.jpg"))
+#slide2x([47], image("../public/merged-11/0047.jpg"), image("../public/translated-11/0047.jpg"), h: false)
 
-#slide2x([48], image("../public/merged-11/0048.jpg"), image("../public/translated-11/0048.jpg"))
+#slide2x([48], image("../public/merged-11/0048.jpg"), image("../public/translated-11/0048.jpg"), h: false)
 
 #slide2x([49], image("../public/merged-11/0049.jpg"), image("../public/translated-11/0049.jpg"), cb: 0.05)
 
-#slide2x([50], image("../public/merged-11/0050.jpg"), image("../public/translated-11/0050.jpg"), cb: 0.07)
+#slide2x([50], image("../public/merged-11/0050.jpg"), image("../public/translated-11/0050.jpg"), cb: 0.07, h: false)
 
 #slide2x([51], image("../public/merged-11/0051.jpg"), image("../public/translated-11/0051.jpg"), cb: 0.13)
 
-#slide2x([52], image("../public/merged-11/0052.jpg"), image("../public/translated-11/0052.jpg"), cb: 0.09)
+#slide2x([52], image("../public/merged-11/0052.jpg"), image("../public/translated-11/0052.jpg"), cb: 0.09, h: false)
 
-#slide2x([53], image("../public/merged-11/0053.jpg"), image("../public/translated-11/0053.jpg"), cb: 0.03)
+#slide2x([53], image("../public/merged-11/0053.jpg"), image("../public/translated-11/0053.jpg"), cb: 0.03, h: false)
 
-#slide2x([54], image("../public/merged-11/0054.jpg"), image("../public/translated-11/0054.jpg"))
+#slide2x([54], image("../public/merged-11/0054.jpg"), image("../public/translated-11/0054.jpg"), h: false)
 
 = MPEG-7
 
-#slide2x([56], image("../public/merged-11/0056.jpg"), image("../public/translated-11/0056.jpg"), cb: 0.09)
+#slide2x([56], image("../public/merged-11/0056.jpg"), image("../public/translated-11/0056.jpg"), cb: 11)
 
-#slide2x([57], image("../public/merged-11/0057.jpg"), image("../public/translated-11/0057.jpg"), cb: 0.15)
+#slide2x([57], image("../public/merged-11/0057.jpg"), image("../public/translated-11/0057.jpg"), cb: 17, ct: 6, h: false)
 
-#slide2x([58], image("../public/merged-11/0058.jpg"), image("../public/translated-11/0058.jpg"))
+#slide2x([58], image("../public/merged-11/0058.jpg"), image("../public/translated-11/0058.jpg"), h: false, cb: 2)
 
 = MPEG-21
 
-#slide2x([60], image("../public/merged-11/0060.jpg"), image("../public/translated-11/0060.jpg"), cb: 0.04)
+#slide2x([60], image("../public/merged-11/0060.jpg"), image("../public/translated-11/0060.jpg"), cb: 7)
