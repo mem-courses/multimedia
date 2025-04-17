@@ -17,7 +17,8 @@
   ),
   semester: "Spring-Summer 2025",
   date: "March 27, 2025",
-  page-margin: (left: 16mm, right: 16mm, top: 12mm, bottom: 12mm),
+  page-margin: (left: 16mm, right: 16mm, top: 4mm, bottom: 12mm),
+  show-header: false,
 )
 
 #slide-width.update(x => 976)
@@ -127,6 +128,7 @@
 
 - *I帧(Intra-frame, I-frame)*：只进行独立编码；*P帧(Inter-frame, P-frame)*：根据前一帧进行运动补偿。
   - 为了保证视频质量，避免因差分和量化而累积误差，#mark[每隔几帧会强制插入一个 I 帧]。
+  - H.261 只进行前向预测，即永远使用前一帧作为参考帧。
 
 #no-par-margin
 #align(center, image("images/2025-04-17-13-15-27.png", width: 36%))

@@ -23,6 +23,7 @@
   semester: "",
   course_code: "",
   page-margin: (left: 4mm, right: 4mm, top: 12mm, bottom: 12mm),
+  show-header: true,
 ) = {
   if (course_fullname == "") {
     course_fullname = course
@@ -44,20 +45,22 @@
   // 页眉
   set page(
     header: context {
-      if (counter(page).get().at(0) == 1) {
-        return none
+      if show-header {
+        if (counter(page).get().at(0) == 1) {
+          return none
+        }
+
+        set text(font: font_song, 10pt, baseline: 8pt, spacing: 3pt)
+
+        grid(
+          columns: (1fr, 1fr, 1fr),
+          align(left, course),
+          [] /* align(center, title)*/,
+          align(right, date),
+        )
+
+        line(length: 100%, stroke: 0.5pt)
       }
-
-      set text(font: font_song, 10pt, baseline: 8pt, spacing: 3pt)
-
-      grid(
-        columns: (1fr, 1fr, 1fr),
-        align(left, course),
-        [] /* align(center, title)*/,
-        align(right, date),
-      )
-
-      line(length: 100%, stroke: 0.5pt)
     },
   )
 

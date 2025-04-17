@@ -17,7 +17,8 @@
   ),
   semester: "Spring-Summer 2025",
   date: "March 27, 2025",
-  page-margin: (left: 16mm, right: 16mm, top: 12mm, bottom: 12mm),
+  page-margin: (left: 16mm, right: 16mm, top: 4mm, bottom: 12mm),
+  show-header: false,
 )
 
 #slide-width.update(x => 976)
@@ -39,7 +40,7 @@
 - 对 JPEG 图像的观察结果：
   - 图像局部的变化不大，存在空间冗余。
   - 人类对低频信号的敏感度#mark[高于]对高频信号的敏感度。
-  - 人眼对灰度图像的敏感度高于对色彩信号的敏感度——JPEG采用4:2:0的色度子采样。
+  - 人眼对灰度图像的敏感度高于对色彩信号的敏感度——JPEG采用4:2:0的色彩下采样。
 
 #slide2x([8], image("../public/merged-08/0008.jpg"), image("../public/translated-08/0008.jpg"), cb: 0.09)
 
@@ -48,8 +49,8 @@
   #align(center, image("images/2025-04-16-12-02-31.png", width: 44%))
 ]
 
-- Step 1：将图像从 RGB 空间转化为 YIQ 或者 YUV 空间并进行 4:2:0 的色度子采样。
-  - 4:2:0 的色度子采样：灰度信号按 $1 times 1$ 的格子采样，色度信号按 $2 times 2$ 的格子采样。
+- Step 1：将图像从 RGB 空间转化为 YIQ 或者 YUV 空间并进行 4:2:0 的色彩下采样。
+  - 4:2:0 的色彩下采样：灰度信号按 $1 times 1$ 的格子采样，色度信号按 $2 times 2$ 的格子采样。
 
 #slide2x([10], image("../public/merged-08/0010.jpg"), image("../public/translated-08/0010.jpg"), cb: 0.06)
 
