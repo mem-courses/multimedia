@@ -5,7 +5,7 @@
   course_fullname: "Fundamentals of Multimedia",
   course_code: "CS2090M",
   title: link(
-    "https://www.baidu.com",
+    "https://mem.ac/",
     "Lecture 3. Color in Image and Video",
   ),
   authors: (
