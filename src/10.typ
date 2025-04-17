@@ -197,7 +197,7 @@
   - *视频对象组(Group of VOPs, GOV)*
   - *视频对象平面(Video Object Plane, VOP)*：视频对象在特定时刻的快照。
 
-#topic("基于对象的编码", blue)[
+#topic("基于对象的视觉编码", blue)[
   #slide2x([12], image("../public/merged-11/0012.jpg"), image("../public/translated-11/0012.jpg"), cb: 28)
 
   #slide2x([13], image("../public/merged-11/0013.jpg"), image("../public/translated-11/0013.jpg"), cb: 3)
@@ -216,76 +216,98 @@
 
   #slide2x([18], image("../public/merged-11/0018.jpg"), image("../public/translated-11/0018.jpg"), cb: 5, ct: 1, h: false)
 
-  #slide2x([19], image("../public/merged-11/0019.jpg"), image("../public/translated-11/0019.jpg"), h: false)
+  #slide2x([19], image("../public/merged-11/0019.jpg"), image("../public/translated-11/0019.jpg"), h: false, ct: 1)
 
-  #slide2x([20], image("../public/merged-11/0020.jpg"), image("../public/translated-11/0020.jpg"), cb: 15, ct: 13, h: false)
+  #slide2x([22], image("../public/merged-11/0022.jpg"), image("../public/translated-11/0022.jpg"), cb: 6, ct: 2, h: false)
 
-  #slide2x([21], image("../public/merged-11/0021.jpg"), image("../public/translated-11/0021.jpg"), cb: 19, ct: 11, h: false)
+  - *填充* 是对边界块进行运动补偿进行填充的方法。常见的填充方法有水平填充、垂直填充。
 
-  #slide2x([22], image("../public/merged-11/0022.jpg"), image("../public/translated-11/0022.jpg"), cb: 0.03, h: false)
+  #example[
+    *为什么需要填充？*：像右边的情况，边缘块可能在参考帧中找不到对应的块。
 
-  #slide2x([23], image("../public/merged-11/0023.jpg"), image("../public/translated-11/0023.jpg"), cb: 0.01, h: false)
+    #no-par-margin
+    #table(
+      columns: (1fr, 1fr),
+      [*OK*], [*Fail*],
+      align(center, image("images/2025-04-17-15-45-06.png", width: 100%)), align(center, image("images/2025-04-17-15-45-12.png", width: 100%)),
+    )
+  ]
 
-  #slide2x([24], image("../public/merged-11/0024.jpg"), image("../public/translated-11/0024.jpg"), h: false)
+  #slide2x([23], image("../public/merged-11/0023.jpg"), image("../public/translated-11/0023.jpg"), cb: 5, ct: 2, h: false)
 
-  #slide2x([25], image("../public/merged-11/0025.jpg"), image("../public/translated-11/0025.jpg"), h: false)
+  #slide2x([24], image("../public/merged-11/0024.jpg"), image("../public/translated-11/0024.jpg"), h: false, ct: 2, cb: 3)
 
-  #slide2x([26], image("../public/merged-11/0026.jpg"), image("../public/translated-11/0026.jpg"), cb: 0.01)
+  #slide2x([25], image("../public/merged-11/0025.jpg"), image("../public/translated-11/0025.jpg"), h: false, ct: 3)
 
-  #slide2x([27], image("../public/merged-11/0027.jpg"), image("../public/translated-11/0027.jpg"), h: false)
+  - #[
+      与之前的运动矢量编码基本类似。相似度用 *绝对误差和(Sum of Absolute Differences, SAD)* 度量。
 
-  #slide2x([28], image("../public/merged-11/0028.jpg"), image("../public/translated-11/0028.jpg"), h: false)
+      - 多引入了一个 $"Map"(p,q)$ 控制只与 VOP 中的块进行差分。
+      - 允许运动矢量精度打到 $1"/"4$ 像素级别，通过插值搜索。
+    ]
 
-  #slide2x([29], image("../public/merged-11/0029.jpg"), image("../public/translated-11/0029.jpg"))
+  #slide2x([26], image("../public/merged-11/0026.jpg"), image("../public/translated-11/0026.jpg"), cb: 4)
 
-  #slide2x([30], image("../public/merged-11/0030.jpg"), image("../public/translated-11/0030.jpg"), cb: 0.04, h: false)
+  #slide2x([27], image("../public/merged-11/0027.jpg"), image("../public/translated-11/0027.jpg"), h: false, cb: 3)
 
-  #slide2x([31], image("../public/merged-11/0031.jpg"), image("../public/translated-11/0031.jpg"), cb: 0.01, h: false)
+  #slide2x([28], image("../public/merged-11/0028.jpg"), image("../public/translated-11/0028.jpg"), h: false, cb: 1)
 
-  #slide2x([32], image("../public/merged-11/0032.jpg"), image("../public/translated-11/0032.jpg"), cb: 0.03, h: false)
+  #slide2x([29], image("../public/merged-11/0029.jpg"), image("../public/translated-11/0029.jpg"), cb: 2)
 
-  #slide2x([33], image("../public/merged-11/0033.jpg"), image("../public/translated-11/0033.jpg"), cb: 0.01)
+  #slide2x([30], image("../public/merged-11/0030.jpg"), image("../public/translated-11/0030.jpg"), cb: 7, ct: 8, h: false)
 
-  #slide2x([34], image("../public/merged-11/0034.jpg"), image("../public/translated-11/0034.jpg"), h: false)
+  #slide2x([31], image("../public/merged-11/0031.jpg"), image("../public/translated-11/0031.jpg"), cb: 4, ct: 3, h: false)
 
-  #slide2x([35], image("../public/merged-11/0035.jpg"), image("../public/translated-11/0035.jpg"), cb: 0.05)
+  #slide2x([32], image("../public/merged-11/0032.jpg"), image("../public/translated-11/0032.jpg"), cb: 7, ct: 1, h: false)
 
-  #slide2x([36], image("../public/merged-11/0036.jpg"), image("../public/translated-11/0036.jpg"), cb: 0.13)
+  - MPEG-4 支持二值编码与灰度编码两种形状编码的方式。
 
-  #slide2x([37], image("../public/merged-11/0037.jpg"), image("../public/translated-11/0037.jpg"))
+  #slide2x([33], image("../public/merged-11/0033.jpg"), image("../public/translated-11/0033.jpg"), cb: 5)
 
-  #slide2x([38], image("../public/merged-11/0038.jpg"), image("../public/translated-11/0038.jpg"), cb: 0.15, h: false)
+  #slide2x([34], image("../public/merged-11/0034.jpg"), image("../public/translated-11/0034.jpg"), h: false, ct: 3, cb: 5)
 
-  #slide2x([39], image("../public/merged-11/0039.jpg"), image("../public/translated-11/0039.jpg"), cb: 0.10, h: false)
+  #slide2x([35], image("../public/merged-11/0035.jpg"), image("../public/translated-11/0035.jpg"), cb: 8)
 
-  #slide2x([40], image("../public/merged-11/0040.jpg"), image("../public/translated-11/0040.jpg"), h: false)
+  - *Sprite 编码(sprite coding)*：核心思想是将背景单独编码。
 
-  #slide2x([41], image("../public/merged-11/0041.jpg"), image("../public/translated-11/0041.jpg"), cb: 0.03, h: false)
-
-  #slide2x([42], image("../public/merged-11/0042.jpg"), image("../public/translated-11/0042.jpg"), h: false)
-
-  #slide2x([43], image("../public/merged-11/0043.jpg"), image("../public/translated-11/0043.jpg"), h: false)
-
-  #slide2x([44], image("../public/merged-11/0044.jpg"), image("../public/translated-11/0044.jpg"), cb: 0.01, h: false)
-
-  #slide2x([45], image("../public/merged-11/0045.jpg"), image("../public/translated-11/0045.jpg"), cb: 0.01, h: false)
-
-  #slide2x([46], image("../public/merged-11/0046.jpg"), image("../public/translated-11/0046.jpg"), h: false)
-
-  #slide2x([47], image("../public/merged-11/0047.jpg"), image("../public/translated-11/0047.jpg"), h: false)
-
-  #slide2x([48], image("../public/merged-11/0048.jpg"), image("../public/translated-11/0048.jpg"), h: false)
-
-  #slide2x([49], image("../public/merged-11/0049.jpg"), image("../public/translated-11/0049.jpg"), cb: 0.05)
-
-  #slide2x([50], image("../public/merged-11/0050.jpg"), image("../public/translated-11/0050.jpg"), cb: 0.07, h: false)
+  #slide2x([36], image("../public/merged-11/0036.jpg"), image("../public/translated-11/0036.jpg"), cb: 17)
 ]
 
-#slide2x([51], image("../public/merged-11/0051.jpg"), image("../public/translated-11/0051.jpg"), cb: 0.13)
+#slide2x([37], image("../public/merged-11/0037.jpg"), image("../public/translated-11/0037.jpg"))
 
-#slide2x([52], image("../public/merged-11/0052.jpg"), image("../public/translated-11/0052.jpg"), cb: 0.09, h: false)
+#slide2x([38], image("../public/merged-11/0038.jpg"), image("../public/translated-11/0038.jpg"), cb: 18, ct: 3, h: false)
 
-#slide2x([53], image("../public/merged-11/0053.jpg"), image("../public/translated-11/0053.jpg"), cb: 0.03, h: false)
+#slide2x([39], image("../public/merged-11/0039.jpg"), image("../public/translated-11/0039.jpg"), cb: 14, ct: 5, h: false)
+
+#slide2x([40], image("../public/merged-11/0040.jpg"), image("../public/translated-11/0040.jpg"), h: false, ct: 1, cb: 1)
+
+#slide2x([41], image("../public/merged-11/0041.jpg"), image("../public/translated-11/0041.jpg"), cb: 6, h: false, ct: 8)
+
+#slide2x([42], image("../public/merged-11/0042.jpg"), image("../public/translated-11/0042.jpg"), h: false, ct: 2, cb: 3)
+
+#slide2x([43], image("../public/merged-11/0043.jpg"), image("../public/translated-11/0043.jpg"), h: false, ct: 1, cb: 1)
+
+#slide2x([44], image("../public/merged-11/0044.jpg"), image("../public/translated-11/0044.jpg"), cb: 4, h: false, ct: 3)
+
+#slide2x([45], image("../public/merged-11/0045.jpg"), image("../public/translated-11/0045.jpg"), cb: 4, ct: 2, h: false)
+
+#slide2x([46], image("../public/merged-11/0046.jpg"), image("../public/translated-11/0046.jpg"), h: false, ct: 5, cb: 4)
+
+#slide2x([47], image("../public/merged-11/0047.jpg"), image("../public/translated-11/0047.jpg"), h: false, ct: 1)
+
+#slide2x([48], image("../public/merged-11/0048.jpg"), image("../public/translated-11/0048.jpg"), h: false)
+
+#slide2x([49], image("../public/merged-11/0049.jpg"), image("../public/translated-11/0049.jpg"), cb: 0.05)
+
+#slide2x([50], image("../public/merged-11/0050.jpg"), image("../public/translated-11/0050.jpg"), cb: 0.07, h: false)
+
+#slide2x([51], image("../public/merged-11/0051.jpg"), image("../public/translated-11/0051.jpg"), cb: 17)
+
+#slide2x([52], image("../public/merged-11/0052.jpg"), image("../public/translated-11/0052.jpg"), cb: 12, ct: 3, h: false)
+
+- H.264 还支持 *帧内预测(intra prediction, I-prediction)*。
+
+#slide2x([53], image("../public/merged-11/0053.jpg"), image("../public/translated-11/0053.jpg"), cb: 7, ct: 2, h: false)
 
 #slide2x([54], image("../public/merged-11/0054.jpg"), image("../public/translated-11/0054.jpg"), h: false)
 
