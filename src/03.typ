@@ -126,7 +126,7 @@
 #slide2x([24], image("../public/merged-03/0024.jpg"), image("../public/translated-03/0024.jpg"), header: false, ct: 2)
 
 - *色度计实验(colorimeter experiment)*：一个理想实验，测量颜色是怎么通过三原色混合得来的。
-  - 科学家发现自然界的部分颜色无法通过这种方法调出来——e.g. 可以通过讲上面的红灯移下来调色，这样计红光的强度为负值。
+  - 科学家发现自然界的部分颜色无法通过这种方法调出来——e.g. 可以通过讲上面的红灯移下来调色，这样计红光的强度为负值，这也是为什么下一页（P25）的图红色线可以到 $0$ 以下。
 
 #slide2x([25], image("../public/merged-03/0025.jpg"), image("../public/translated-03/0025.jpg"), header: false)
 
@@ -151,6 +151,7 @@
 #slide2x([34], image("../public/merged-03/0034.jpg"), image("../public/translated-03/0034.jpg"), cb: 17, ct: 5, header: false)
 
 - CIELAB 颜色模型引入 $1"/"3$ 次幂来近似对数关系，对 luminance、colorfulness 和 hue 三维进行建模。
+  - 设计师在设计的时候往往会使用 CIELAB 颜色模型，做好之后再转化回 RGB。
 
 #slide2x([35], image("../public/merged-03/0035.jpg"), image("../public/translated-03/0035.jpg"), header: false, ct: 8, cb: 5)
 
@@ -166,13 +167,18 @@
 
 #slide2x([41], image("../public/merged-03/0041.jpg"), image("../public/translated-03/0041.jpg"), cb: 3)
 
-#slide2x([42], image("../public/merged-03/0042.jpg"), image("../public/translated-03/0042.jpg"), crop: 0.9)
+- *加法色(additive color)*：RGB 颜色模型是加法色，适用于光源 / CRT 显示器的情况。
+- *减法色(subtractive color)*：CMY 颜色模型是减法色，适用于染料 / 打印机打印等反射自然光（白光）的情况。
 
-#slide2x([43], image("../public/merged-03/0043.jpg"), image("../public/translated-03/0043.jpg"), cb: 3)
+#slide2x([42], image("../public/merged-03/0042.jpg"), image("../public/translated-03/0042.jpg"), cb: 12)
 
-#slide2x([44], image("../public/merged-03/0044.jpg"), image("../public/translated-03/0044.jpg"), crop: 0.5)
+#slide2x([43], image("../public/merged-03/0043.jpg"), image("../public/translated-03/0043.jpg"), cb: 8)
 
-#slide2x([45], image("../public/merged-03/0045.jpg"), image("../public/translated-03/0045.jpg"), header: false, cb: 0.09)
+- CMYK 颜色模型是在 CMY 的基础上，把黑色部分 $K=min{C,M,Y}$ 减掉的结果。
+
+#slide2x([44], image("../public/merged-03/0044.jpg"), image("../public/translated-03/0044.jpg"), cb: 55)
+
+#slide2x([45], image("../public/merged-03/0045.jpg"), image("../public/translated-03/0045.jpg"), header: false, cb: 10, ct: 2)
 
 #slide2x([46], image("../public/merged-03/0046.jpg"), image("../public/translated-03/0046.jpg"), cb: 0.28)
 

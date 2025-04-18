@@ -52,6 +52,10 @@
     ),
   ),
 )
+#no-par-margin
+- 两件事情：
+  - 横轴上怎么切分？采样频率。
+  - 纵轴上怎么切分？量化。
 
 #slide2x([7], image("../public/merged-05/0007.jpg"), image("../public/translated-05/0007.jpg"), crop: 0.9, header: false)
 
@@ -206,7 +210,7 @@ $
 #slide2x([53], image("../public/merged-05/0053.jpg"), image("../public/translated-05/0053.jpg"), cb: 0.05)
 
 - *差分脉冲编码调制(Differential PCM, DPCM)*：只是在预测编码的基础上对差值进一步引入了量化，并使用霍夫曼编码存储。（具体参考 P57 的例子）
-  - 注意：${hat(f)_n}$ 需由 ${tilde(f)_n}$ 而不是 ${f_n}$ 计算得到，否则会导致信号偏移！
+  - 注意：${hat(f)_n}$ 需由 ${tilde(f)_n}$ 而不是 ${f_n}$ 计算得到，否则会导致信号偏移——#mark[编码端必须使用量化后的重建值]！
   - 量化方法 $Q$ 可以为：$tilde(e)_n = Q[e_n] = 16 times "trunc"((255 + e_n) "/" 16) - 256 + 8$。
 
 #slide2x([54], image("../public/merged-05/0054.jpg"), image("../public/translated-05/0054.jpg"), header: false, cb: 0.01, ct: 0.02)

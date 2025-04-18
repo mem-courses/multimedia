@@ -39,7 +39,7 @@
 #slide2x([6], image("../public/merged-06/0006.jpg"), image("../public/translated-06/0006.jpg"), crop: 0.83)
 
 - *熵(entropy)* 的计算公式：$important(display(eta = H(S) = sum_(i=1)^n p_i log_2 1/p_i = -sum_(i=1)^n p_i log_2 p_i))$，其中 $p_i$ 是 *符号(symbol)* $i$ 出现的概率。
-  - 其中 $display(log_2 1/p_i)$ 就是单个字符所包含的信息量，一段信息的熵就是所有字符所包含的信息量之和。
+  - 其中 $display(log_2 1/p_i)$ 就是单个符号所包含的信息量（单个符号的熵），一段信息的熵就是所有字符所包含的信息量之和。
 
 #slide2x([7], image("../public/merged-06/0007.jpg"), image("../public/translated-06/0007.jpg"), header: false, crop: 0.83, ct: 0.07)
 

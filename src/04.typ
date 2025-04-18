@@ -32,7 +32,9 @@
 
 #slide2x([4], image("../public/merged-04/0004.jpg"), image("../public/translated-04/0004.jpg"), crop: 0.9)
 
-- *分量视频(component video)*：将视频信号 RGB 通过三条线缆传输，从而不存在信号之间的 *串扰(crosstalk)*。
+- *分量视频(component video)*：将视频信号 RGB 通过三条线缆传输。
+  - 三条独立的线缆，不存在信号之间的 *串扰(crosstalk)* 问题。
+  - 可以直接支持 RGB、YIQ、YUV 等色彩模型。
 
 #slide2x([5], image("../public/merged-04/0005.jpg"), image("../public/translated-04/0005.jpg"), crop: 0.75)
 
@@ -147,6 +149,10 @@
 #slide2x([26], image("../public/merged-04/0026.jpg"), image("../public/translated-04/0026.jpg"), cb: 0.08)
 
 #slide2x([27], image("../public/merged-04/0027.jpg"), image("../public/translated-04/0027.jpg"))
+
+#note[
+  *NTSC、PAL、SECAM 的比较*
+]
 
 #slide2x([28], image("../public/merged-04/0028.jpg"), image("../public/translated-04/0028.jpg"), crop: 0.76)
 
